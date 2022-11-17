@@ -19,8 +19,8 @@ function App() {
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/user" component={User} /> */}
           {/* <Route exact path="/reservation" component={Reservation} /> */}
-          <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-          <Route exact path="/" component={Excursion} />
+          {/* <Route render={() => <h1 className="display-2">Wrong page!</h1>} /> */}
+          <Route exact path="/ex" component={Excursion} />
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
 
         </Switch>
