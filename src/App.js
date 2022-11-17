@@ -17,10 +17,11 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/excursion" component={Excursion} />
           {/* <Route exact path="/user" component={User} /> */}
           {/* <Route exact path="/reservation" component={Reservation} /> */}
           {/* <Route render={() => <h1 className="display-2">Wrong page!</h1>} /> */}
-          <Route exact path="/ex" component={Excursion} />
+          
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
 
         </Switch>
