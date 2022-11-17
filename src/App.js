@@ -5,7 +5,7 @@ import Home from "./pages/Home"
 import Excursion from "./pages/Excursion"
 import Footer from "./components/Footer";
 import User from "./pages/User";
-import Booking from "./pages/Booking";
+import Launch from "./pages/Launch";
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,9 +15,10 @@ function App() {
       <>
         <Nav />
         <Routes>
-          <Route exact path="/" component={Home} />
-          {/* <Route exact path="/user" component={User} /> */}
-          {/* <Route exact path="/reservation" component={Reservation} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/Launch" element={<Launch />} />
+          <Route path="/Excursion" element={<Excursion />} />
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
         </Routes>
       </>

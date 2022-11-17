@@ -5,9 +5,9 @@ export default function Home(){
 
   const navigate = useNavigate();
 
-  const navigateToBooking = () => {
+  const navigateToLaunch = () => {
     // 👇️ navigate to /Booking
-    navigate('/Booking');
+    navigate('/Launch');
   };
 
   // const navigateMarsAdv = () => {
@@ -22,10 +22,10 @@ export default function Home(){
             What Mission Will you Accept?
         </h2>
         <div class="card p-2 m-2">
-          <p>A Quick Jump to the Moon</p><button class="btn btn-primary" onClick={navigateToBooking}>Click to View Launch Dates</button>
+          <p>A Quick Jump to the Moon</p><button class="btn btn-primary" onClick={navigateToLaunch}>Click to View Launch Dates</button>
         </div>
         <div class="card p-2 m-2">
-          <p>The Mars Explorer</p><button class="btn btn-primary" onClick={navigateToBooking}>Click to View Launch Dates</button>
+          <p>The Mars Explorer</p><button class="btn btn-primary" onClick={navigateToLaunch}>Click to View Launch Dates</button>
         </div>
     </article>
   );
