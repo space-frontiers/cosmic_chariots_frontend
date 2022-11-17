@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Booking(){
+export default function Launch(){
   return (
-    <article id="booking">
+    <article id="Launch">
         <h1>Your Mission, Should You Choose to Accept...</h1>
         <div class="card p-2 m-2">
           <p>Feb. 12, 2023</p>
