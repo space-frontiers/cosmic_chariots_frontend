@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home"
+import Excursion from "./pages/Excursion"
 import Footer from "./components/Footer";
 import User from "./pages/User";
 import Booking from "./pages/Booking";
@@ -13,12 +14,12 @@ function App() {
     <BrowserRouter>
       <>
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/booking" element={<Booking />} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          {/* <Route exact path="/user" component={User} /> */}
+          {/* <Route exact path="/reservation" component={Reservation} /> */}
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-        </Routes>
+        </Switch>
       </>
       <Footer />
     </BrowserRouter>
