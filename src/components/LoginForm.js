@@ -1,6 +1,6 @@
 // see SignupForm.js for comments
 import React, { useState } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+// import { Form, Button, Alert } from "react-bootstrap";
 
 // import useMutation and LOGIN-USER
 import { useMutation } from "@apollo/react-hooks";
@@ -52,52 +52,52 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        <Alert
+      <form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <alert
           dismissible
           onClose={() => setShowAlert(false)}
           show={showAlert}
           variant="danger"
         >
           Something went wrong with your login credentials!
-        </Alert>
-        <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
-          <Form.Control
+        </alert>
+        <div>
+          <label htmlFor="email">Email
+          <textarea
             type="text"
             placeholder="Your email"
             name="email"
             onChange={handleInputChange}
             value={userFormData.email}
             required
-          />
-          <Form.Control.Feedback type="invalid">
+          /></label>
+          <alert type="invalid">
             Email is required!
-          </Form.Control.Feedback>
-        </Form.Group>
+          </alert>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
-          <Form.Control
+        <div>
+          <label htmlFor="password">Password
+          <textarea
             type="password"
             placeholder="Your password"
             name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
-          />
-          <Form.Control.Feedback type="invalid">
+          /></label>
+          <alert type="invalid">
             Password is required!
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Button
+          </alert>
+        </div>
+        <button
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="success"
         >
           Submit
-        </Button>
-      </Form>
+        </button>
+      </form>
     </>
   );
 };
