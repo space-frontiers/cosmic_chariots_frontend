@@ -12,6 +12,8 @@
 //   }
 
 import React from "react";
+import "../index.css"
+
 
 const excursion = [
     {
@@ -85,6 +87,7 @@ const excursion = [
   
           <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {excursion.map((excursion) => (
+                <>
               <a key={excursion.id} href={excursion.href} className="group">
                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                   <img
@@ -93,10 +96,11 @@ const excursion = [
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
                 </div>
-                <h3 className="mt-4 text-sm text-gray-700 bg-orange-400">{excursion.excursion}</h3>
-                <p className="mt-1 text-lg font-medium text-gray-900">{excursion.description}</p>
-                <p className="mt-1 text-lg font-medium text-gray-900">{excursion.cost}</p>
               </a>
+              <h3 className="mt-4 text-sm text-gray-700">{excursion.excursion}</h3>
+              <p className="mt-1 text-lg font-medium text-grey-900">{excursion.description}</p>
+              <p className="mt-1 text-lg font-medium text-gray-900">{excursion.cost}</p>
+              </>
             ))}
           </div>
         </div>
