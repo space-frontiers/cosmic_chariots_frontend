@@ -20,7 +20,7 @@ const excursion = [
       description: 'Our most popular excursion - Head out for a once-in-a-lifetime drive around a whole new planet!',
       href: '#',
       cost: '$119/person',
-      imageSrc: 'https://flic.kr/p/2nZxYSQ',
+      imageSrc: 'https://live.staticflickr.com/65535/52503464748_41673f2820_n.jpg',
       imageAlt: 'Mars Rover',
     },
     {
@@ -29,7 +29,7 @@ const excursion = [
       description: "Who doesn/'t want to see Carrot Top? Especially in space? Come see this incredible artist before the venue is outta space!",
       href: '#',
       cost: '$75/person',
-      imageSrc: 'https://flic.kr/p/2nZsDYB',
+      imageSrc: 'https://live.staticflickr.com/65535/52502425607_8009099d0c_b.jpg',
       imageAlt: 'Carrot Top with various items in the backgrounds',
     },
     {
@@ -38,7 +38,7 @@ const excursion = [
       href: '#',
       description: "Let's get sweaty in our space suits! Take a 3 hour round into one of Mars' most beatiful cliff bottoms. Moderate Hike.",
       cost: '$85/person',
-      imageSrc: 'https://flic.kr/p/2nZsGaR',
+      imageSrc: 'https://live.staticflickr.com/65535/52502432987_e88a47dbb7.jpg',
       imageAlt: 'person walking on the moon with Earth in the background',
     },
     {
@@ -47,7 +47,7 @@ const excursion = [
       href: '#',
       description: "Those who have left us haven't always left us for good! Come meet the spirits that haunt our solar system!",
       cost: '$99/person',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
+      imageSrc: '',
       imageAlt: 'ghost tour picture',
     },
     
