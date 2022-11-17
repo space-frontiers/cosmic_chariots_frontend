@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-// import LoginForm from './LoginForm';
+import Modal from 'react-modal';
+
+// import SignUpForm from './SignupForm';
+import LoginForm from './LoginForm';
 
 import Auth from '../utils/auth';
 
@@ -12,32 +13,29 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Space Frontiers
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
-              {/* <Nav.Link as={Link} to='/'>
-                Home
-              </Nav.Link> */}
+      <nav>
+        <div>
+          <span>
+            <Link to="/" relative="path">Space Frontiers</Link>
+          </span>
+          <section id='navbar'>
+            <ul className='ml-auto'>
               {/* if user is logged in show my account and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/user'>
+                  <li as={Link} to='/user'>
                     My Account
-                  </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  </li>
+                  <li onClick={Auth.logout}>Logout</li>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                // <li onClick={() => setShowModal(true)}>Login</li>
+                <li onClick={() => setShowModal(true)}>Login</li>
               )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+            </ul>
+          </section>
+        </div>
+      </nav>
       {/* set modal data up */}
       <Modal
         size='lg'
@@ -45,30 +43,26 @@ const AppNavbar = () => {
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              {/* <Tab.Pane eventKey='login'>
+        <div defaultActiveKey='login'>
+          <div closeButton>
+            <section id='signup-modal'>
+              <ul variant='pills'>
+                  <li eventKey='login'>Login</li>
+                  <li eventKey='signup'>Sign Up</li>
+              </ul>
+            </section>
+          </div>
+          <div>
+            <section>
+              <span eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane> */}
-              <Tab.Pane eventKey='signup'>
+              </span>
+              {/* <Tab.Pane eventKey='signup'>
                 <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
+              </Tab.Pane> */}
+            </section>
+          </div>
+        </div>
       </Modal>
     </>
   );
