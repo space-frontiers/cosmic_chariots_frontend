@@ -8,6 +8,7 @@ import User from "./pages/User";
 import Launch from "./pages/Launch";
 import Dining from "./pages/Dining"
 import Activity from "./pages/Activity"
+import Mission from "./pages/Mission"
 // import logo from './logo.svg';
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Excursion" element={<Excursion />} />
           <Route path="/Dining" element={<Dining />} />
           <Route path="/Activity" element={<Activity />} />
+          <Route path="/Mission" element={<Mission />} />
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
         </Routes>
       </>
