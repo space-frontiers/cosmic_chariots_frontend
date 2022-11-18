@@ -18,9 +18,14 @@ import Mission from "./pages/Mission";
 // import logo from './logo.svg';
 import "./App.css";
 
+
+// const url = process.env.NODE_ENV === 'development'
+//   ? '/graphql' : "https://cosmic-chariots-backend.herokuapp.com/graphql";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
+
+
 
 const client = new ApolloClient({
   link: (httpLink),
