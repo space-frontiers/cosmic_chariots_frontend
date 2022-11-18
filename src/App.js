@@ -6,7 +6,8 @@ import Excursion from "./pages/Excursion"
 import Footer from "./components/Footer";
 import User from "./pages/User";
 import Launch from "./pages/Launch";
-import logo from './logo.svg';
+import Dining from "./pages/Dining"
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/user" element={<User />} />
           <Route path="/Launch" element={<Launch />} />
           <Route path="/Excursion" element={<Excursion />} />
+          <Route path="/Dining" element={<Dining />} />
           <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
         </Routes>
       </>
