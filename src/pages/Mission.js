@@ -16,7 +16,7 @@ const mission = [
     {
       name: 'Planet Excursions',
       description: 'What will your space adventure be? Choose between great exploration missions and near-base family fun.',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
+      imageSrc: 'https://live.staticflickr.com/65535/52502432987_e88a47dbb7.jpg',
       imageAlt: 'Person walking on the Moon.',
       href: '#',
     },
