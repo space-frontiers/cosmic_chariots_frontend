@@ -101,7 +101,7 @@ export default function Excursion() {
                   </div>
                 </a>
                 <div className="bg-blue-100">
-                <h3 className="mt-4 text-center underline text-3xl text-black ">
+                <h3 className=" text-center underline text-3xl text-black ">
                   {excursion.excursion}
                 </h3>
                 <p className="mt-1  text-center text-lg font-medium text-black">
