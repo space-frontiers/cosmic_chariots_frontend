@@ -89,7 +89,7 @@ export default function Excursion() {
 
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 text-white">
           {excursion.map((excursion) => (
-            <div className="border-4 rounded-md border-white-500 text-white">
+            <div className="border-4 rounded-md border-blue-100 text-white">
               {/* <div className="bg-white-500 rounded-md"> */}
                 <a key={excursion.id} href={excursion.href} className="group">
                   <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-blue-200 xl:aspect-w-7 xl:aspect-h-8">
@@ -110,7 +110,6 @@ export default function Excursion() {
                 <p className="mt-3 text-center text-xl font-lg  text-black">
                   {excursion.cost}
                 </p>
-                {/* <button className="mt-3 mb-4 mx-24 bg-sky-400 text-white w-20 font-bold py-2 rounded hover:bg-sky-700">Click to Add</button> */}
                 <a
               href="#"
               className="mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
