@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
-import Privacy from '../partials/Privacy'
+import Privacy from '../partials/HeroHome';
 
 function SignUp() {
   return (
@@ -68,7 +68,11 @@ function SignUp() {
 
             </div>
           </div>
+
+          <Privacy />
         </section>
+
+
 
       </main>
 

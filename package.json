@@ -27,6 +27,7 @@
     "server": "^1.0.37",
     "sticky-js": "^1.3.0",
     "tailwind": "^4.0.0",
+    "tw-elements": "^1.0.0-alpha12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
