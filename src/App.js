@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import SignIn from './pages/SignIn';
 import Excursion from "./pages/Excursion";
@@ -39,7 +39,7 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
         <>
-          <Nav />
+          {/* <Nav /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
