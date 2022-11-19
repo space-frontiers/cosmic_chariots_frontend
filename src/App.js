@@ -8,6 +8,7 @@ import {
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
+import SignIn from './pages/SignIn';
 import Excursion from "./pages/Excursion";
 import Footer from "./components/Footer";
 import User from "./pages/User";
@@ -40,6 +41,7 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
             <Route path="/user" element={<User />} />
             <Route path="/Launch" element={<Launch />} />
             <Route path="/Excursion" element={<Excursion />} />
