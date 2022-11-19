@@ -24,12 +24,12 @@ function Header() {
             {/* Logo */}
             <Link to="/" className="block" aria-label="Cruip">
             <img
-                        className="h-8 w-8"
-                        src="./spaceship.png"
-                        alt="Space Frontiers"
-                      />
+                className="h-8 w-8"
+                src="./spaceship.png"
+                alt="Space Frontiers"
+                />
             </Link>
-          </div>
+          </div> 
 
           {/* Site navigation */}
           <nav className="flex flex-grow">
