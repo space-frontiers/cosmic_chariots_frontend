@@ -1,6 +1,7 @@
 {
   "name": "cosmic-chariots",
   "version": "0.1.0",
+  "proxy": "http://localhost:3006/",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -54,6 +55,6 @@
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4"
   },
-  "local proxy": "http://localhost:3001",
-  "proxy": "https://cosmic-chariots-backend.herokuapp.com/"
+  
+  "deployed proxy": "https://cosmic-chariots-backend.herokuapp.com/"
 }

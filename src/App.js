@@ -19,13 +19,11 @@ import Mission from "./pages/Mission";
 import "./App.css";
 
 
-// const url = process.env.NODE_ENV === 'development'
-//   ? '/graphql' : "https://cosmic-chariots-backend.herokuapp.com/graphql";
+const url = process.env.NODE_ENV === 'development'
+  ? '/graphql' : "https://backend-polari.herokuapp.com/graphql";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
-
-
 
 const client = new ApolloClient({
   link: (httpLink),

@@ -10,3 +10,13 @@ export const QUERY_DININGPACKAGES = gql`
     }
   }
 `;
+
+export const QUERY_EXCURSIONS = gql`
+query excursions {
+  excursions {
+    _id
+    cost
+    description
+    excursion
+  }
+}`
