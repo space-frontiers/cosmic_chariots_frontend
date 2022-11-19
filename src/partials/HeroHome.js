@@ -14,9 +14,10 @@ function HeroHome() {
   class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
 >
   <div
-    class="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl"
+    class="text-center relative z-30 p-5 text-2xl text-white bg-blue-800 bg-opacity-50 rounded-xl"
   >
-    Space Frontiers: Cosmic Chariots
+    <p class="italic font-bold">Space Frontiers: Cosmic Chariots</p>
+    <p>Galactic Adventures Company</p>
   </div>
   <video
     autoPlay
