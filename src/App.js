@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Privacy from './pages/Privacy';
 import Excursion from "./pages/Excursion";
 import Footer from "./components/Footer";
 import User from "./pages/User";
@@ -45,6 +46,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/user" element={<User />} />
             <Route path="/Launch" element={<Launch />} />
             <Route path="/Excursion" element={<Excursion />} />
