@@ -6,7 +6,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { 
-  BrowserRouter, 
   Routes, 
   Route,
   useLocation
@@ -45,9 +44,25 @@ const client = new ApolloClient({
 
 function App() {
 
+  const location = useLocation();
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: 'phone',
+      duration: 700,
+      easing: 'ease-out-cubic',
+    });
+  });
+
+  useEffect(() => {
+    document.querySelector('html').style.scrollBehavior = 'auto'
+    window.scroll({ top: 0 })
+    document.querySelector('html').style.scrollBehavior = ''
+  }, [location.pathname]); // triggered on route change
+
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
         <>
           {/* <Nav /> */}
           <Routes>
@@ -64,11 +79,7 @@ function App() {
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
         </>
-      
-        {/*  Site footer */}
-        <Footer />
-      
-      </BrowserRouter>
+     
     </ApolloProvider>
   );
 }
