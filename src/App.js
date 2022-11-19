@@ -18,6 +18,7 @@ import Activity from "./pages/Activity";
 import Mission from "./pages/Mission";
 // import logo from './logo.svg';
 import "./App.css";
+import './css/style.css';
 
 
 // const url = process.env.NODE_ENV === 'development'
