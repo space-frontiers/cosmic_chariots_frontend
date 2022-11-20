@@ -1,14 +1,17 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_DININGPACKAGES = gql`
-  query diningPackages {
-    diningPackages {
-      _id
-      package
-      description
-      cost
-    }
+query DiningPackages {
+  diningPackages {
+    _id
+    package
+    description
+    cost
+    href
+    imageSrc
+    imageAlt
   }
+}
 `;
 
 export const QUERY_EXCURSIONS = gql`
