@@ -10,3 +10,41 @@ export const QUERY_DININGPACKAGES = gql`
     }
   }
 `;
+
+export const QUERY_EXCURSIONS = gql`
+query excursions {
+  excursions {
+    _id
+    excursion
+    description
+    cost
+    href
+    imageSrc
+    imageAlt
+  }
+}`
+
+export const QUERY_MISSIONS = gql`
+query MissionDates {
+  missionDates {
+    _id
+    date
+    description
+    destination
+    
+  }
+}
+`
+
+export const QUERY_ACTIVITY = gql`
+query OnBoardActivities {
+  onBoardActivities {
+    _id
+    on_board_activity
+    description
+    cost
+    href
+    imageSrc
+    imageAlt
+  }
+}`

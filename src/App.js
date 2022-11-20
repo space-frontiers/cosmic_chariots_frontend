@@ -31,8 +31,8 @@ import Activity from "./pages/Activity";
 import Mission from "./pages/Mission";
 // import logo from './logo.svg';
 
-// const url = process.env.NODE_ENV === 'development'
-//   ? '/graphql' : "https://cosmic-chariots-backend.herokuapp.com/graphql";
+const url = process.env.NODE_ENV === 'development'
+  ? '/graphql' : "https://backend-polari.herokuapp.com/graphql";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
