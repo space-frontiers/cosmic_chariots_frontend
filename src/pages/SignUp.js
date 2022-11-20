@@ -1,21 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from "@apollo/react-hooks";
+import { ADD_USER } from "../utils/mutations";
 
-import Header from '../components/Header';
+import Auth from "../utils/auth";
 
-function SignUp() {
+import Logo from "../images/logo.png";
+
+const SignUp = () => {
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
+
+  // declared the addUser with the useMutation
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  const handleInputChange = (event) => {
+  const { name, value } = event.target;
+
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(userFormData);
+
+    // use addUser function
+    try {
+    const { data } = await addUser({
+      variables: { ...userFormData },
+    });
+
+    Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(JSON.stringify(err,null,2));
+    }
+
+    setUserFormData({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+    });
+  };  
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-
-      {/*  Site header */}
-      <Header />
 
       {/*  Page content */}
       <main className="flex-grow">
 
         <section className="bg-gradient-to-b from-gray-100 to-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+
+            {/*  Logo */}
+            <div className="flex justify-center ">
+              <Link to="/">
+                <img data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="pt-10" src={Logo} alt=""/>
+              </Link>
+            </div>
+
+            <div className="pt-20 pb-12 md:pt-20 md:pb-20">
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
@@ -24,38 +73,76 @@ function SignUp() {
 
               {/* Form */}
               <div className="max-w-sm mx-auto">
-                <form>
+                <form onSubmit={handleFormSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">First Name <span className="text-red-600">*</span></label>
-                      <input id="name" type="text" className="form-input w-full text-gray-800" placeholder="Enter your name" required />
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">First Name<span className="text-red-600">*</span></label>
+                      <input 
+                        id="fname" 
+                        type="text"
+                        name="first_name" 
+                        className="form-input w-full text-gray-800" 
+                        placeholder="Enter your first name"
+                        value={userFormData.first_name}
+                        onChange={handleInputChange} 
+                        required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">Last Name <span className="text-red-600">*</span></label>
-                      <input id="name" type="text" className="form-input w-full text-gray-800" placeholder="Enter your name" required />
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">Last Name<span className="text-red-600">*</span></label>
+                      <input 
+                        id="lname" 
+                        type="text"
+                        name="last_name"
+                        className="form-input w-full text-gray-800" 
+                        placeholder="Enter your last name"
+                        value={userFormData.last_name}
+                        onChange={handleInputChange} 
+                        required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
-                      <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
+                      <input 
+                        id="email" 
+                        type="email"
+                        name="email"
+                        className="form-input w-full text-gray-800" 
+                        placeholder="Enter your email address"
+                        value={userFormData.email}
+                        onChange={handleInputChange}
+                        required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="password">Password <span className="text-red-600">*</span></label>
-                      <input id="password" type="password" className="form-input w-full text-gray-800" placeholder="Enter your password" required />
+                      <input 
+                        id="password" 
+                        type="password"
+                        name="password"
+                        className="form-input w-full text-gray-800" 
+                        placeholder="Enter your password"
+                        value={userFormData.password}
+                        onChange={handleInputChange}
+                        required />
                     </div>
                   </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign up</button>
+                      <button 
+                        className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        style={{ cursor: 'pointer' }}
+                        type="submit"
+                      >
+                        Sign up
+                      </button>
                     </div>
                   </div>
                   <div className="text-sm text-gray-500 text-center mt-3">
-                    By creating an account, you agree to the <a className="underline" href="#0">terms & conditions</a>, and our <a className="underline" href="./Privacy" target="_blank">privacy policy</a>.
+                    By creating an account, you agree to the <a className="underline" href="./Terms" target="_blank">terms & conditions</a>, and our <a className="underline" href="./Privacy" target="_blank">privacy policy</a>.
                                 </div>
                 </form>
 

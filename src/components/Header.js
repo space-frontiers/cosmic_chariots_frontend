@@ -50,9 +50,9 @@ function Header() {
 
                       </Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3" onClick={Auth.logout}>Sign Out</Link>
-                  </li> */}
+                  </li>
                 </>
               ) : (
                 <>
