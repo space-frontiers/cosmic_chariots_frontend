@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-// import appolo hook and add user mutation
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 
@@ -17,28 +15,19 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  // set state for form validation
-  const [validated] = useState(false);
-  // set state for alert
-  const [showAlert, setShowAlert] = useState(false);
 
   // declared the addUser with the useMutation
   const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
   const { name, value } = event.target;
+
     setUserFormData({ ...userFormData, [name]: value });
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(setUserFormData);
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    console.log(userFormData);
 
     // use addUser function
     try {
@@ -49,7 +38,6 @@ const SignUp = () => {
     Auth.login(data.addUser.token);
     } catch (err) {
       console.error(JSON.stringify(err,null,2));
-      setShowAlert(true);
     }
 
     setUserFormData({
@@ -71,7 +59,9 @@ const SignUp = () => {
 
             {/*  Logo */}
             <div className="flex justify-center ">
+              <Link to="/">
                 <img data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="pt-10" src={Logo} alt=""/>
+              </Link>
             </div>
 
             <div className="pt-20 pb-12 md:pt-20 md:pb-20">

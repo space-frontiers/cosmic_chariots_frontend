@@ -22,6 +22,7 @@ const SignIn = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
+
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -50,7 +51,9 @@ const SignIn = (props) => {
 
             {/*  Logo */}
             <div className="flex justify-center ">
+              <Link to="/">
                 <img data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="pt-10" src={Logo} alt=""/>
+              </Link>
             </div>
 
             <div className="pt-20 pb-12 md:pt-20 md:pb-20">
