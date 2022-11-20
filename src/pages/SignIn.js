@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 import Header from '../components/Header';
 
-const Login = (props) => {
+const SignIn = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -122,4 +122,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default SignIn;
