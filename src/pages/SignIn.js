@@ -5,7 +5,7 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-import Header from '../components/Header';
+import Logo from "../images/logo.png";
 
 const SignIn = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -15,10 +15,7 @@ const SignIn = (props) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    setFormState({ ...formState, [name]: value });
   };
 
   // submit form
@@ -45,13 +42,18 @@ const SignIn = (props) => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
-      {/*  Site header */}
-      <Header />
+
 
       <main className="flex-grow">
         <section className="bg-gradient-to-b from-gray-100 to-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+
+            {/*  Logo */}
+            <div className="flex justify-center ">
+                <img data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="pt-10" src={Logo} alt=""/>
+            </div>
+
+            <div className="pt-20 pb-12 md:pt-20 md:pb-20">
               
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
