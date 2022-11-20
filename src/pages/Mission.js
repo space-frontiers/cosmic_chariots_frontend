@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
-
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const mission = [
     {
@@ -31,6 +32,7 @@ const mission = [
 
     return (
       <div className="bg-gray-100">
+        <Header />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
             <h2 className="text-5xl font-bold text-gray-900 mb-5 text-center">Mission Preparations</h2>
@@ -60,6 +62,7 @@ const mission = [
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
