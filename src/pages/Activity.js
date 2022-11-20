@@ -2,8 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import "../index.css";
 import { QUERY_ACTIVITY } from '../utils/queries';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 
 export default function Activity() {
   const { loading, data } = useQuery(QUERY_ACTIVITY);
@@ -16,8 +15,7 @@ export default function Activity() {
   return (
     
     <div className="bg-white">
-       {/*  Site header */}
-       <Header />
+  
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-3xl mb-4">On Board Activities</h2>
 
@@ -59,7 +57,6 @@ export default function Activity() {
         </div>
         </div>
       </div>
-      {<Footer />}
 
     </div>
   );

@@ -3,22 +3,21 @@ import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
 import { QUERY_DININGPACKAGES } from '../utils/queries';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 
 
 
   
   export default function Dining() {
-    const { loading, data } = useQuery(QUERY_DININGPACKAGES);
+    const { loading, data, err} = useQuery(QUERY_DININGPACKAGES);
     const dining = data?.diningPackages || [];
     console.log("data ", data)
     console.log("dining", dining)
+    console.error(JSON.stringify(err,null,2));
 
     return (
       <div className="flex flex-col min-h-screen overflow-hidden ">
-      {/*  Site header */}
-      <Header />
+   
 
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -47,7 +46,6 @@ import Footer from '../components/Footer';
 
           </div>
         </div>
-        {<Footer />}
       </div>
 
      
