@@ -1,14 +1,3 @@
-//   This example requires some changes to your config:
-  
-  
-//   tailwind.config.js
-//   module.exports = {
-    
-//     plugins: [
-    
-//       require('@tailwindcss/aspect-ratio'),
-//     ],
-//   }
 
 import { useQuery } from '@apollo/client';
 import React from "react";
@@ -16,42 +5,7 @@ import "../index.css"
 import { QUERY_DININGPACKAGES } from '../utils/queries';
 
 
-// const dining = [
-//     {
-//         "package": "Wine and Dine",
-//         "description": "Our on-board sommelier knows exactly what wines to pair with stargazing... and dinner too. Every night, you'll recieve a glass of the perfect wine to go with your meal and one smartly paired with dessert.",
-//         "cost": "$59/night"
-//     },
-//     {
-//         "package": "There's Always More Space for Food!",
-//         "description": "Come to our gourmet buffet of irresistible delicacies that are out of this world. Every night is a different feast, with exciting options for the whole family to choose from.",
-//         "cost": "$49/night"
-//     },
-//     {
-//         "package": "Literally Just Stake Every Night",
-//         "description": "For our meat-eaters, we know you want all the joys of a hearty Earth meal from the safty of our ship. Come enjoy the finest cuts while you drift through the galaxy",
-//         "cost": "$69/night"
-//     }
-// ]
 
-//   MJ DINING SEED
-// // [
-//     {
-//         "package": "Wine and Dine",
-//         "description": "Our on-board sommelier knows exactly what wines to pair with stargazing... and dinner too. Every night, you'll recieve a glass of the perfect wine to go with your meal and one smartly paired with dessert.",
-//         "cost": "$59/night"
-//     },
-//     {
-//         "package": "There's Always More Space for Food!",
-//         "description": "Come to our gourmet buffet of irresistible delicacies that are out of this world. Every night is a different feast, with exciting options for the whole family to choose from.",
-//         "cost": "$49/night"
-//     },
-//     {
-//         "package": "Literally Just Stake Every Night",
-//         "description": "For our meat-eaters, we know you want all the joys of a hearty Earth meal from the safty of our ship. Come enjoy the finest cuts while you drift through the galaxy",
-//         "cost": "$69/night"
-//     }
-// ]
   
   export default function Dining() {
     const { loading, data } = useQuery(QUERY_DININGPACKAGES);
