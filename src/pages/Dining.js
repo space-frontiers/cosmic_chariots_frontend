@@ -3,6 +3,8 @@ import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
 import { QUERY_DININGPACKAGES } from '../utils/queries';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 
@@ -14,6 +16,10 @@ import { QUERY_DININGPACKAGES } from '../utils/queries';
     console.log("dining", dining)
 
     return (
+      <div className="flex flex-col min-h-screen overflow-hidden ">
+      {/*  Site header */}
+      <Header />
+
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-center mb-5 text-5xl">DINING PACKAGES</h2>
@@ -41,7 +47,10 @@ import { QUERY_DININGPACKAGES } from '../utils/queries';
 
           </div>
         </div>
-      // </div>
+        {<Footer />}
+      </div>
+
+     
     )
   }
 
