@@ -1,17 +1,9 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
+import { useQuery } from '@apollo/client';
+import React from "react";
+import "../index.css"
+// import { QUERY_MISSIONS } from '../utils/queries';
+
+
 const mission = [
     {
       name: 'Planet Excursions',
@@ -37,6 +29,12 @@ const mission = [
   ]
   
   export default function Mission() {
+    // const { loading, data } = useQuery(QUERY_MISSIONS);
+    // const mission = data?.MissionDates || [];
+    // console.log("data ", data)
+    // console.log("mission", mission)
+  
+
     return (
       <div className="bg-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

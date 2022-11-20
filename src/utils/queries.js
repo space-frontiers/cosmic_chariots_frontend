@@ -15,8 +15,23 @@ export const QUERY_EXCURSIONS = gql`
 query excursions {
   excursions {
     _id
-    cost
-    description
     excursion
+    description
+    cost
+    href
+    imageSrc
+    imageAlt
   }
 }`
+
+export const QUERY_MISSIONS = gql`
+query MissionDates {
+  missionDates {
+    _id
+    date
+    description
+    destination
+    
+  }
+}
+`
