@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
 
+// import useMutation and LOGIN-USER
+import { useMutation } from "@apollo/react-hooks";
+import { LOGIN_USER } from "../utils/mutations";
+
+import Auth from "../utils/auth";
+
 function SignIn() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
