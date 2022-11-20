@@ -1,32 +1,39 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
-export default function Home(){
+import Header from '../components/Header';
+import HeroHome from '../components/HeroHome';
+// import FeaturesHome from '../partials/Features';
+// import FeaturesBlocks from '../partials/FeaturesBlocks';
+// import Testimonials from '../partials/Testimonials';
+// import Newsletter from '../partials/Newsletter';
+import Footer from '../components/Footer';
+// import Banner from '../partials/Banner';
 
-  const navigate = useNavigate();
-
-  const navigateToLaunch = () => {
-    // 👇️ navigate to /Booking
-    navigate('/Launch');
-  };
-
-  // const navigateMarsAdv = () => {
-  //   // 👇️ navigate to /
-  //   navigate('/');
-  // };
-  
+function Home() {
   return (
-    <article id="home">
-        <h1>Welcome to Your Space Adventure!</h1>
-        <h2>
-            What Mission Will you Accept?
-        </h2>
-        <div class="card p-2 m-2">
-          <p>A Quick Jump to the Moon</p><button class="btn btn-primary" onClick={navigateToLaunch}>Click to View Launch Dates</button>
-        </div>
-        <div class="card p-2 m-2">
-          <p>The Mars Explorer</p><button class="btn btn-primary" onClick={navigateToLaunch}>Click to View Launch Dates</button>
-        </div>
-    </article>
+    <div className="flex flex-col min-h-screen overflow-hidden ">
+
+      {/*  Site header */}
+      <Header />
+
+      {/*  Page content */}
+      <main className="flex-grow">
+
+        {/*  Page sections */}
+        <HeroHome />
+        {/* <FeaturesHome /> */}
+        {/* <FeaturesBlocks /> */}
+        {/* <Testimonials /> */}
+        {/* <Newsletter /> */}
+
+      </main>
+
+      {/* <Banner /> */}
+
+      {<Footer />}
+
+    </div>
   );
 }
+
+export default Home;
