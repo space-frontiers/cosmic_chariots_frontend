@@ -18,7 +18,9 @@ export default function Excursion() {
  
     <div className="bg-[url('https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616__480.jpg')] bg-contain">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="sr-only">Excursions</h2>
+              {/* <div className="flex justify-center">
+        <div className="rounded-lg shadow-lg bg-white max-w-sm"> */}
+        <h2 className="text-center text-5xl text-white mb-5">Excursions</h2>
 
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 text-white">
           {excursion.map((excursion) => (
@@ -51,6 +53,7 @@ export default function Excursion() {
                </div>
             </div>
           ))}
+        {/* </div> */}
         </div>
       </div>
     </div>
