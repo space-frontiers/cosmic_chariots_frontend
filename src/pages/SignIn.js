@@ -31,8 +31,8 @@ const SignIn = (props) => {
       });
 
       Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(JSON.stringify(err,null,2));
     }
 
     // clear form values
