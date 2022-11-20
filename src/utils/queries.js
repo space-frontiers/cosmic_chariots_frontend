@@ -35,3 +35,16 @@ query MissionDates {
   }
 }
 `
+
+export const QUERY_ACTIVITY = gql`
+query OnBoardActivities {
+  onBoardActivities {
+    _id
+    on_board_activity
+    description
+    cost
+    href
+    imageSrc
+    imageAlt
+  }
+}`

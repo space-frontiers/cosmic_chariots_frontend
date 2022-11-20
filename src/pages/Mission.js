@@ -22,8 +22,8 @@ const mission = [
     {
       name: 'Dining Packages',
       description: 'We have the finest cuisine off-Earth. Your room includes our basic dining package, but make',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
-      imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
+      imageSrc: 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/09/27/all-the-fruits-cut-whole.jpg.rend.hgtvcom.616.493.suffix/1632778035320.jpeg',
+      imageAlt: 'Fruit photo',
       href: '#',
     },
   ]
@@ -39,7 +39,7 @@ const mission = [
       <div className="bg-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-            <h2 className="text-2xl font-bold text-gray-900">Mission Preparations</h2>
+            <h2 className="text-3xl font-bold text-gray-900 text-center">Mission Preparations</h2>
   
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
               {mission.map((mission) => (
