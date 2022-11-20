@@ -2,8 +2,7 @@ import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
 import { QUERY_EXCURSIONS } from '../utils/queries';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+
 
 
 
@@ -17,7 +16,6 @@ export default function Excursion() {
   return (
  
     <div className="bg-white">
-      <Header />
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
   
         <h2 className="text-center text-5xl text-black mb-5">Excursions</h2>
@@ -57,7 +55,6 @@ export default function Excursion() {
         </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
