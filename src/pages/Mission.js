@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
-// import { QUERY_MISSIONS } from '../utils/queries';
 
 
 const mission = [
@@ -29,11 +28,6 @@ const mission = [
   ]
   
   export default function Mission() {
-    // const { loading, data } = useQuery(QUERY_MISSIONS);
-    // const mission = data?.MissionDates || [];
-    // console.log("data ", data)
-    // console.log("mission", mission)
-  
 
     return (
       <div className="bg-gray-100">
