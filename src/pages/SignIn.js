@@ -65,10 +65,7 @@ function SignIn() {
             </div>
           </div>
         </section>
-
       </main>
-
-
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../components/Header';
-import HeroHome from '../partials/HeroHome';
+import HeroHome from '../components/HeroHome';
 // import FeaturesHome from '../partials/Features';
 // import FeaturesBlocks from '../partials/FeaturesBlocks';
 // import Testimonials from '../partials/Testimonials';

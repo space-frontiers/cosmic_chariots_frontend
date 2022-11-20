@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Modal from '../utils/Modal';
 
 import MoonImage from '../images/billwright-moonscape2aa-650.jpg';
 import MarsImage from '../images/buzzaldrin-mars.jpg';
