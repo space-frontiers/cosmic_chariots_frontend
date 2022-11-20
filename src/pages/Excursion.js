@@ -13,16 +13,14 @@ export default function Excursion() {
   console.log("dining", excursion)
 
   return (
-
-    // <div className="bg-gradient-to-r from-fuchsia-600 via-blue-700 to-green-500 bg">
  
-    <div className="bg-[url('https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616__480.jpg')] bg-contain">
+    <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-              {/* <div className="flex justify-center">
-        <div className="rounded-lg shadow-lg bg-white max-w-sm"> */}
-        <h2 className="text-center text-5xl text-white mb-5">Excursions</h2>
-
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 text-white">
+  
+        <h2 className="text-center text-5xl text-black mb-5">Excursions</h2>
+        <div className="flex justify-center">
+        <div className="rounded-lg shadow-lg bg-white max-w-sm">
+        {/* <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 text-white"> */}
           {excursion.map((excursion) => (
             <div className="border-4 rounded-md border-blue-100 text-white">
                 <a key={excursion._id} href={excursion.href} className="group">
@@ -53,7 +51,7 @@ export default function Excursion() {
                </div>
             </div>
           ))}
-        {/* </div> */}
+        </div>
         </div>
       </div>
     </div>
