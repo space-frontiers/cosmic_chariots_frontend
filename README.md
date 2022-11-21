@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cosmic Chariots Frontend
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<div id="top"></div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
+<div align="center">
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
+</div>
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cosmic Chariots is an e-commerce site that allows you to book a trip to space. Similar to booking a cruise ship, the app allows you to make a reservation on a specific launch date, choose your suite, and pick what planet excursions, on-board activities, and dining package you would like to add. You can save your location with your personal information and you will be all set to head for the stars!
 
-### `npm run build`
+This repository contains the app's backend. For frontend, please click [here](https://github.com/space-frontiers/cosmic_chariots_frontend).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Landing Page](https://i.imgur.com/VN9uDm0.jpg)
+    
+</div>
 
-### `npm run eject`
+### Technology Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* HTML (for building elements on pages)
+* CSS (for styling)
+* JavaScript (for site functionality)
+* ReactJS (for more efficient site functionality)
+* Node.js (to connect with server)
+* Express (to send data between front and backend)
+* MongoDB (to store data)
+* Mongoose (to pull data from MongDB)
+* GraphQL (to run queries and mutations which handle puts, posts, and commits)
+* Bcrypt (to encrypt the password)
+* JWT (for login tokens) 
+* AOS (Animate on Scroll)
+* tailwind (for CSS styling)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- BASIC PROJECT INFO -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Members
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Albert Bautista
+* MJ Shelton
+* Holly Parker
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Live Links: 
+* [Cosmic Chariots Website](https://cosmic-chariots.herokuapp.com/)
+* [Frontend Github Repo](https://github.com/space-frontiers/cosmic_chariots_frontend)
+* [Backend Github Repo](https://github.com/space-frontiers/cosmic_chariots_backend)
+* [Wireframe](https://whimsical.com/project-3-MtHszPZWp3vregnDn2rumE)
+* [Presentation](https://docs.google.com/presentation/d/1x7QMq8phBRiloBIfTyjtQ4iJNmy2AyAgCHN39ZZZcfo/edit?usp=sharing)
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Team Rules:
 
-### Analyzing the Bundle Size
+  * Support each other and listen to all ideas
+  * Communicate over slack what you are working on if not in zoom together
+  * Pitch ideas before applying/pushing
+  * Work hard and ask for help when hard work isn't enough
+  * Best ⅔ vote
+  * Have fun
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
 
-### Making a Progressive Web App
+<!-- FUTURE DEVELOPMENT AND CLOSING INFORMATION -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Development:
 
-### Advanced Configuration
+  * Build more mutations to allow users to make more choices
+  * Add up costs for users to approve
+  * Create more cruise dates, room-types, excursions, on-board activities, and dining packages
+  * Add ability to choose specifc rooms on the ship
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
+Team GitHub Page: [https://github.com/space-frontiers](https://github.com/space-frontiers)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Albert Bautista - [GitHub](https://github.com/devilarms83)
+* MJ Shelton - [GitHub](https://github.com/mjshelton12)
+* Holly Parker - [GitHub](https://github.com/hollygparker)
 
-### `npm run build` fails to minify
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [aos - Animate on Scroll](https://www.npmjs.com/package/aos)
+* [tailwind](https://tailwindcss.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
