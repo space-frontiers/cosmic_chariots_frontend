@@ -24,6 +24,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Account from './pages/Account';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import Excursion from "./pages/Excursion";
 import Footer from "./components/Footer";
 import User from "./pages/User";
@@ -86,6 +87,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/account" element={<Account />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/Terms" element={<Terms />} />
             <Route path="/user" element={<User />} />
             <Route path="/Launch" element={<Launch />} />
             <Route path="/Excursion" element={<Excursion />} />
