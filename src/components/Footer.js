@@ -1,5 +1,8 @@
 import React from "react";
 
+import ghIMG from "../images/gh32px.png";
+import ghAB from "../images/gh-ab.jpg";
+
 export default function Footer(){
   return (
     // <footer class="text-center">
@@ -13,9 +16,9 @@ export default function Footer(){
     <footer class="px-4 py-4 h-auto mb-4 w3-full flex flex-wrap justify-center items-center bg-gray-50">
       <div class="flex flex-wrap flex-col items-center">
         <div class="flex flex-wrap">
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="Use any sample image here..." src="images/sample-image-256px.png"></img>
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="Use any sample image here..." src="images/sample-image-256px.png"></img>
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="Use any sample image here..." src="images/sample-image-256px.png"></img>
+          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghAB}></img>
+          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghIMG}></img>
+          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghIMG}></img>
         </div>
         <span class="font-semibold text-sm m-1">Space Frontiers</span>
         <span class="text-xs text-gray-500">© 2022. All rights reserved</span>
