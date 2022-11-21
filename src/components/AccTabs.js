@@ -1,38 +1,50 @@
 import React from "react";
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME, QUERY_ME, QUERY_USER } from '../utils/queries';
+import { GET_ME, QUERY_USER, QUERY_DINING } from '../utils/queries';
 
 // import Profile from '../components/Profile';
 // import Reservations from '../components/Reservations';
 
 import Auth from '../utils/auth';
 
-const Tabs = ({ color }) => {
+export default function TabsRender() {
   const [openTab, setOpenTab] = React.useState(1);
   
     const userId = Auth.getProfile().data._id
-    console.log(Auth.getProfile().data)
-    console.log(userId)
-
+    // console.log(Auth.getProfile().data)
+    // console.log(userId)
 
     const { loading, data, err } = useQuery(QUERY_USER, {
-        variables: { userId },
+        variables: { userId: userId },
     });
-    console.error(JSON.stringify(err,null,2));
 
-    console.log(data)
+    let userdata = data?.user || {};
+    console.log(userdata)
 
-    const userProfile = data?.user || []
-    console.log("user profile", userProfile)
+
+    // const userProfile = data?.user || []
+    // console.log("user profile", userProfile)
     // console.log(JSON.stringify(err,null,2));
 
-    // const { loading, data } = useQuery(GET_ME);
+    // const { loading, data, err } = useQuery(GET_ME);
     // let userData = data?.me || {};
     // console.log(userData);
 
+    // const _id = "63797a611ff8fd1ed02fcc5a"
+    // console.log(_id)
+    // const { loading, err, data } = useQuery(QUERY_DINING, {
+    //   variables: {id: _id}
+    // });
+    // const diningPackage = data?.diningPackage || []
+    // console.log(diningPackage)
+
     if (loading) {
         return <div>Loading...</div>;
+    }
+
+    if (err) {
+      return `Error! ${err}`;
     }
 
   return (
@@ -48,8 +60,8 @@ const Tabs = ({ color }) => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 1
-                    ? "text-white bg-" + color + "-600"
-                    : "text-" + color + "-600 bg-white")
+                    ? "text-white bg-indigo-600"
+                    : "text-indigo-600 bg-white")
                 }
                 onClick={e => {
                   e.preventDefault();
@@ -67,8 +79,8 @@ const Tabs = ({ color }) => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
-                    ? "text-white bg-" + color + "-600"
-                    : "text-" + color + "-600 bg-white")
+                    ? "text-white bg-indigo-600"
+                    : "text-indigo-600 bg-white")
                 }
                 onClick={e => {
                   e.preventDefault();
@@ -104,10 +116,3 @@ const Tabs = ({ color }) => {
   );
 };
 
-export default function TabsRender() {
-  return (
-    <>
-      <Tabs color="indigo" />;
-    </>
-  );
-}
