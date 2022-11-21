@@ -36,8 +36,9 @@ import Reservation from "./pages/Reservation";
 const url = process.env.NODE_ENV === 'development'
   ? '/graphql' : "https://cosmic-chariots-backend.herokuapp.com/graphql";
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: url,
 });
+
 
 const client = new ApolloClient({
   link: (httpLink),
