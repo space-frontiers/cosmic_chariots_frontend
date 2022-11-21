@@ -37,7 +37,7 @@ import Reservation from "./pages/Reservation";
 const url = process.env.NODE_ENV === 'development'
   ? '/graphql' : "https://cosmic-chariots-backend.herokuapp.com/graphql";
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: url,
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
