@@ -12,8 +12,6 @@ export default function TabsRender() {
   const [openTab, setOpenTab] = React.useState(1);
   
     const userId = Auth.getProfile().data._id
-    // console.log(Auth.getProfile().data)
-    // console.log(userId)
 
     const { loading, data, err } = useQuery(QUERY_USER, {
         variables: { userId: userId },
