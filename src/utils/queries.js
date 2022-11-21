@@ -12,7 +12,7 @@ query DiningPackages {
     imageAlt
   }
 }
-`;
+`
 
 export const QUERY_EXCURSIONS = gql`
 query excursions {
@@ -51,3 +51,57 @@ query OnBoardActivities {
     imageAlt
   }
 }`
+
+export const GET_ME = gql`
+  {
+    me {
+      _id
+      first_name
+      last_name
+      email
+      password
+      street_address_1
+      street_address_2
+      city
+      state
+      zip
+      country
+      phone_number
+      reservation {
+        _id
+      }
+    }
+  }
+`
+
+export const QUERY_USER = gql`
+  query user($userId: ID!) {
+    user( id: $userId) {
+      _id
+      first_name
+      last_name
+      email
+      password
+      street_address_1
+      street_address_2
+      city
+      state
+      zip
+      country
+      phone_number
+      reservation {
+        _id
+      }    
+    }
+  }
+`
+
+export const QUERY_DINING = gql`
+  query DiningPackage($id: ID!) {
+    diningPackage(_id: $id){
+      _id
+      cost
+      description
+    }
+  }
+`

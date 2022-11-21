@@ -13,7 +13,7 @@ function HeroHome() {
   class="relative flex items-center justify-center h-screen mb-12 overflow-hidden"
 >
   <div
-    class="text-center relative z-30 p-5 text-2xl text-white bg-blue-800 bg-opacity-50 rounded-xl"
+    class="text-center relative z-30 p-5 text-2xl text-white bg-blue-800 bg-opacity-50 rounded-xl" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear"
   >
     <p class="italic font-bold">Space Frontiers: Cosmic Chariots</p>
     <p>Galactic Adventures Company</p>
