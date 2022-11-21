@@ -1,9 +1,36 @@
 import React from "react";
-import { useQuery } from '@apollo/client';
+// import { Navigate, useParams } from 'react-router-dom';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_ME, QUERY_ME } from '../utils/queries';
 
+// import Profile from '../components/Profile';
+// import Reservations from '../components/Reservations';
+
+import Auth from '../utils/auth';
 
 const Tabs = ({ color }) => {
-  const [openTab, setOpenTab] = React.useState(1);
+    // const userId = Auth.getProfile().data._id
+    // console.log(Auth.getProfile().data._id)
+
+    const [openTab, setOpenTab] = React.useState(1);
+    // const { loading, data, err } = useQuery(QUERY_USER, {
+    //     variables: { userId: userId },
+    // });
+
+    // console.log(data)
+
+    // const userProfile = data?.user || []
+    // console.log("user profile", userProfile)
+    // // console.log(JSON.stringify(err,null,2));
+
+    const { loading, data } = useQuery(GET_ME);
+    let userData = data?.me || {};
+    console.log(userData);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
   return (
     <>
       <div className="flex flex-wrap">
@@ -56,23 +83,12 @@ const Tabs = ({ color }) => {
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
-                    <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
+                    Profile Page
                   </p>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
+                    Reservations
                   </p>
                 </div>
               </div>
