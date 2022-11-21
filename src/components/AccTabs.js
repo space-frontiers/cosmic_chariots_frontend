@@ -1,7 +1,7 @@
 import React from "react";
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME, QUERY_ME } from '../utils/queries';
+import { GET_ME, QUERY_ME, QUERY_USER } from '../utils/queries';
 
 // import Profile from '../components/Profile';
 // import Reservations from '../components/Reservations';
@@ -9,23 +9,27 @@ import { GET_ME, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Tabs = ({ color }) => {
-    // const userId = Auth.getProfile().data._id
-    // console.log(Auth.getProfile().data._id)
+  const [openTab, setOpenTab] = React.useState(1);
+  
+    const userId = Auth.getProfile().data._id
+    console.log(Auth.getProfile().data)
+    console.log(userId)
 
-    const [openTab, setOpenTab] = React.useState(1);
-    // const { loading, data, err } = useQuery(QUERY_USER, {
-    //     variables: { userId: userId },
-    // });
 
-    // console.log(data)
+    const { loading, data, err } = useQuery(QUERY_USER, {
+        variables: { userId },
+    });
+    console.error(JSON.stringify(err,null,2));
 
-    // const userProfile = data?.user || []
-    // console.log("user profile", userProfile)
-    // // console.log(JSON.stringify(err,null,2));
+    console.log(data)
 
-    const { loading, data } = useQuery(GET_ME);
-    let userData = data?.me || {};
-    console.log(userData);
+    const userProfile = data?.user || []
+    console.log("user profile", userProfile)
+    // console.log(JSON.stringify(err,null,2));
+
+    // const { loading, data } = useQuery(GET_ME);
+    // let userData = data?.me || {};
+    // console.log(userData);
 
     if (loading) {
         return <div>Loading...</div>;
