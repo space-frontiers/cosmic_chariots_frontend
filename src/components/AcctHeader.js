@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../utils/auth';
 
+
 export default function AcctHeader() {
  const [top, setTop] = useState(true);
 
@@ -41,6 +42,7 @@ export default function AcctHeader() {
                 </li>              
             </ul>
           </nav>
+
         </div>
 
       </div>
