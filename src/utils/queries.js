@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { useApolloClient, gql } from "@apollo/client";
 
 export const QUERY_DININGPACKAGES = gql`
 query DiningPackages {
@@ -75,8 +75,8 @@ export const GET_ME = gql`
 `
 
 export const QUERY_USER = gql`
-  query user($userId: ID!) {
-    user( userId: $userId) {
+  query user($email: String!) {
+    user( email: $email) {
       _id
       first_name
       last_name
