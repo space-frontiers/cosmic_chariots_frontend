@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import AcctHdrImg from '../images/starship.jpg';
 import AccTabs from '../components/AccTabs';
 
-function Home() {
+function Account() {
   return (
     <div className="flex flex-col min-h-screen  ">
 
@@ -35,21 +35,19 @@ function Home() {
                 <AccTabs />
 
             </div>
+            {<Footer />}
           </div>
 
         </div>
 
         </div>
         </section>
-
       </main>
 
       {/* <Banner /> */}
-
-      {<Footer />}
 
     </div>
   );
 }
 
-export default Home;
+export default Account;
