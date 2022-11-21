@@ -12,13 +12,20 @@ export default function TabsRender() {
   const [openTab, setOpenTab] = React.useState(1);
   
     const userId = Auth.getProfile().data._id
+    // console.log(Auth.getProfile().data)
+    // console.log(userId)
 
-    const { loading, data, err } = useQuery(QUERY_USER, {
-        variables: { userId: userId },
-    });
-
-    let userdata = data?.user || {};
+    let { loading, data, err } = useQuery(GET_ME, {
+      variables: { userId: userId },});
+    let userdata = data?.me || {};
     console.log(userdata)
+
+    // const { loading, data, err } = useQuery(QUERY_USER, {
+    //     variables: { userId: userId },
+    // });
+
+    // let userdata = data?.user || {};
+    // console.log(userdata)
 
 
     // const userProfile = data?.user || []
