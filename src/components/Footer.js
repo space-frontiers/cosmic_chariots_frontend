@@ -3,6 +3,9 @@ import React from "react";
 import ghIMG from "../images/gh32px.png";
 import ghAB from "../images/gh-ab.jpg";
 
+import ghMJ from "../images/gh-mj.jpg";
+import ghHP from "../images/gh-hp.png";
+
 export default function Footer(){
   return (
     // <footer class="text-center">
@@ -16,9 +19,9 @@ export default function Footer(){
     <footer class="px-4 py-4 h-auto mb-4 w3-full flex flex-wrap justify-center items-center bg-gray-50">
       <div class="flex flex-wrap flex-col items-center">
         <div class="flex flex-wrap">
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghAB}></img>
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghIMG}></img>
-          <img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghIMG}></img>
+          <a href="https://github.com/devilarms83" target="_blank"><img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghAB} /></a>
+          <a href="https://github.com/mjshelton12" target="_blank"><img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghMJ} /></a>
+          <a href="https://github.com/hollygparker" target="_blank"><img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghHP} /></a>          
         </div>
         <span class="font-semibold text-sm m-1">Space Frontiers</span>
         <span class="text-xs text-gray-500">© 2022. All rights reserved</span>
