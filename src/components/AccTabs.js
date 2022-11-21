@@ -1,4 +1,6 @@
 import React from "react";
+import { useQuery } from '@apollo/client';
+
 
 const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1);

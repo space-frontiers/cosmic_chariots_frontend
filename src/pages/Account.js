@@ -28,7 +28,7 @@ function Home() {
 
   {/* Section header */}
   <div className="pt-12 md:pt-16 w-full flex flex-col h-screen ">
-    <img src={AcctHdrImg} className="" />
+    <img src={AcctHdrImg} className="rounded" data-aos="fade-down" />
     <h1 className="italic text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4 capitalize text-center" data-aos="zoom-y-out">Space Frontiers: <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Cosmic Chariots</span></h1>
     <div >
 
