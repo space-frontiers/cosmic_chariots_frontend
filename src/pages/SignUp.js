@@ -76,7 +76,7 @@ const SignUp = () => {
                 <form onSubmit={handleFormSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">First Name<span className="text-red-600">*</span></label>
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="first_name">First Name<span className="text-red-600">*</span></label>
                       <input 
                         id="fname" 
                         type="text"
@@ -90,7 +90,7 @@ const SignUp = () => {
                   </div>
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">Last Name<span className="text-red-600">*</span></label>
+                      <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="last_name">Last Name<span className="text-red-600">*</span></label>
                       <input 
                         id="lname" 
                         type="text"
