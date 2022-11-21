@@ -45,7 +45,7 @@ const Tabs = ({ color }) => {
                 href="#link2"
                 role="tablist"
               >
-                <i className="fas fa-cog text-base mr-1"></i>  Settings
+                <i className="fas fa-cog text-base mr-1"></i>  Reservations
               </a>
             </li>
           </ul>
