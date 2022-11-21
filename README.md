@@ -15,7 +15,7 @@
 
 Cosmic Chariots is an e-commerce site that allows you to book a trip to space. Similar to booking a cruise ship, the app allows you to make a reservation on a specific launch date, choose your suite, and pick what planet excursions, on-board activities, and dining package you would like to add. You can save your location with your personal information and you will be all set to head for the stars!
 
-This repository contains the app's backend. For frontend, please click [here](https://github.com/space-frontiers/cosmic_chariots_frontend).
+This repository contains the app's backend. For frontend, please click [here](https://github.com/space-frontiers/cosmic_chariots_backend).
 
 <br>
 
