@@ -1,13 +1,41 @@
-import { useQuery } from '@apollo/client'
-import React from "react";
+import { useQuery, useMutation } from '@apollo/client'
+import React,{ useState } from "react";
 import "../index.css";
 import { QUERY_ROOMTYPES } from '../utils/queries';
+import { UPDATE_RESERVATION_ROOM_TYPE } from '../utils/mutations';
 
-export default function RoomType() {
+export default function RoomType({reservationId}) {
+  const [room, setRoom] = useState({})
+
   const { loading, data } = useQuery(QUERY_ROOMTYPES);
   const roomType = data?.roomTypes || [];
-  console.log("data ", data)
-  console.log("room type", roomType)
+
+  const [updateReservationRoomType, { error }] = useMutation(UPDATE_RESERVATION_ROOM_TYPE, {
+    variables: {reservationId: reservationId, input: {_id: room._id, suite: room.suite}},
+});
+
+  const  handleClick = async (event) => {
+    let clickedRoom = event.target.id
+    for(let i=0; i<data.roomTypes.length; i++){
+      if(data.roomTypes[i]._id === clickedRoom){
+        setRoom(data.roomTypes[i])
+      }
+    }
+
+    try {
+      const { data } = await updateReservationRoomType({
+        variables: {reservationId: reservationId, input: {_id: room._id, suite: room.suite}}
+      })
+    }
+    catch (err) {
+    console.error(JSON.stringify(err,null,2));
+    }
+
+    navigate('/mission', {reservationId: reservationId})
+
+  }
+
+  console.log("State room", room)
 
   return (
     <div className="bg-white">
@@ -51,7 +79,7 @@ export default function RoomType() {
                     <li>{roomType.amenities_4}</li>
                   </ul>
                   <div>{roomType.cost}</div>
-                  <button class="mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Click to Choose</button>
+                  <button class="mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700" id={roomType._id} onClick={handleClick}>Click to Choose</button>
                 </div>
               ))}
               </div>
