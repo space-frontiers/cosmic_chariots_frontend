@@ -73,6 +73,17 @@ export const UPDATE_RESERVATION_ROOM_TYPE = gql`
       }
     }
   }
+}
+`
+export const ADD_RESERVATION = gql`
+mutation AddReservation($userId: ID!, $reservationId: ID!) {
+  addReservation(userId: $userId, reservationId: $reservationId) {
+    _id
+    reservation {
+      _id
+    }
+  }
+}
 `
 
 export const DELETE_RESERVATION = gql `
@@ -82,3 +93,4 @@ export const DELETE_RESERVATION = gql `
     }
   }
 `
+
