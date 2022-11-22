@@ -23,7 +23,7 @@ export default function Profile() {
 
     const [userFormData, setUserFormData] = useState({
         email: Auth.getProfile().data.email,
-        first_name: "",
+        first_name: Auth.getProfile().data.first_name,
         last_name: "",
         phone_number: "",
         street_address_1: "",
@@ -133,9 +133,8 @@ export default function Profile() {
                                             name="first_name" 
                                             id="first_name" 
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
-                                            defaultValue={userdata.first_name} 
-                                            onChange={handleInputChange}
-                                            required
+                                            value={userdata.first_name} 
+                                            readOnly
                                         />
                                     </div>
 
@@ -146,9 +145,8 @@ export default function Profile() {
                                             name="last_name" 
                                             id="last_name" 
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
-                                            defaultValue={userdata.last_name}
-                                            onChange={handleInputChange}
-                                            required
+                                            value={userdata.last_name}
+                                            readOnly
                                         />
                                     </div>
 
