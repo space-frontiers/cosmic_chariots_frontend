@@ -51,28 +51,35 @@ export const CREATE_RESERVATION = gql`
   }
 `
 export const UPDATE_RESERVATION_MISSIONDATE = gql`
-mutation UpdateReservationMissionDate($reservationId: ID!, $input: MissionDateInput) {
-  updateReservationMissionDate(reservationId: $reservationId, input: $input) {
-    _id
-    mission {
+  mutation UpdateReservationMissionDate($reservationId: ID!, $input: MissionDateInput) {
+    updateReservationMissionDate(reservationId: $reservationId, input: $input) {
       _id
-      destination
-      date
-    }
-  }
-}
-`
-
-
-export const UPDATE_RESERVATION_ROOM_TYPE = gql`
-mutation updateReservationRoomType($reservationId: ID!, $input: RoomTypeInput) {
-  updateReservationRoomType(reservationId: $reservationId, input: $input) {
-    reservation {
-      room_type {
+      mission {
         _id
-        suite
+        destination
+        date
       }
     }
   }
-}
+`
+
+export const UPDATE_RESERVATION_ROOM_TYPE = gql`
+  mutation updateReservationRoomType($reservationId: ID!, $input: RoomTypeInput) {
+    updateReservationRoomType(reservationId: $reservationId, input: $input) {
+      reservation {
+        room_type {
+          _id
+          suite
+        }
+      }
+    }
+  }
+`
+
+export const DELETE_RESERVATION = gql `
+  mutation deleteReservation($reservationId: ID!) {
+    deleteReservation(reservationId: $reservationId) {
+        _id
+    }
+  }
 `
