@@ -29,14 +29,10 @@ const { loading, data, err } = useQuery(QUERY_USER, {
     variables: { email: userId },
 });
 
-console.log("data 32 ", data)
-
 let reservationCard = "No Reservations"
 
 if(data){
-  console.log("data ", data)
   let userdata = data.user.reservation
-  console.log("userdata ", userdata)
   reservationCard = userdata.map((userdata) => (<ReservationCard key={userdata._id} id={userdata._id}/>))
 }
 
