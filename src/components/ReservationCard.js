@@ -1,10 +1,13 @@
 
-// import React from "react";
-import { useQuery } from "@apollo/client";
+import React, {useState} from "react";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_RESERVATION } from "../utils/queries";
+import { DELETE_RESERVATION } from "../utils/mutations"
 
 export default function ReservationCard({ id }) {
   const reservationId = id;
+
+  const [deleteReservation] = useMutation(DELETE_RESERVATION, {variables: { reservationId: reservationId }})
 
   const { loading, data, err } = useQuery(QUERY_RESERVATION, {
     variables: { reservationId: reservationId },
@@ -18,9 +21,22 @@ export default function ReservationCard({ id }) {
     return `Error! ${err}`;
   }
 
-  let cardData = (<p></p>)
+ ;
 
-  console.log ("data 23", data)
+  const handleDelete = async (event) => {
+    event.preventDefault()
+
+    try {
+      await deleteReservation({});
+
+    } catch (err) {
+      console.error(JSON.stringify(err,null,2));
+    }
+
+    window.location.reload()
+  };
+
+  let cardData = (<p></p>)
 
   if(data.reservation != null){
     let excursions = "No Excursions Booked";
@@ -29,7 +45,7 @@ export default function ReservationCard({ id }) {
       for (let i = 0; i < data.reservation.excursion.length; i++) {
         array.push(data.reservation.excursion[i].excursion);
       }
-      excursions = array.toString();
+      excursions = array.join(', ');
     }
   
     let activities = "No Activities Booked";
@@ -38,7 +54,7 @@ export default function ReservationCard({ id }) {
       for (let i = 0; i < data.reservation.on_board_activity.length; i++) {
         array.push(data.reservation.on_board_activity[i].on_board_activity);
       }
-      activities = array.toString();
+      activities = array.join(', ');
     }
   
     let dining = "No Packages Booked";
@@ -47,11 +63,11 @@ export default function ReservationCard({ id }) {
       for (let i = 0; i < data.reservation.dining_package.length; i++) {
         array.push(data.reservation.dining_package[i].dining_package);
       }
-      dining = array.toString();
+      dining = array.join(', ');
     }
 
     cardData = (<div class="max-w-lg w-full lg:max-w-full lg:flex">
-    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="w-screen border-b border-gray-400 lg:border-l-0 lg:border-b lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div class="mb-8">
         <p class="text-sm text-gray-600 flex items-center">
           Launch Date {data.reservation.mission.date}
@@ -70,11 +86,11 @@ export default function ReservationCard({ id }) {
         </p>
         <p class="text-gray-700 text-base">Dining Packages: {dining}</p>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center justify-between">
         <div class="text-sm">
           <p class="text-gray-900 leading-none">See you on board soon!</p>
         </div>
-        <div><button>Delete</button></div>
+        <div><button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" id={data.reservation._id} onClick={handleDelete}>Delete</button></div>
       </div>
     </div>
   </div>)
