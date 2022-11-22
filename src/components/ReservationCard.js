@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_RESERVATION } from "../utils/queries";
 
-export default function ReservationCard({reservation}) {
-  console.log("id ", reservation);
+export default function ReservationCard({id}) {
+  console.log("id ", id);
 
-  const reservationId = reservation;
+  const reservationId = id;
 
   const { loading, data, err } = useQuery(QUERY_RESERVATION, {
     variables: { reservationId: reservationId },
@@ -14,7 +14,7 @@ export default function ReservationCard({reservation}) {
   console.log("data ", data);
   return (
     <>
-      <p>This is from reservation card</p>
+      <p>This is from reservation card - {reservationId}</p>
     </>
   );
 }

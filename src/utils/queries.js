@@ -117,7 +117,7 @@ export const QUERY_RESERVATION = gql`
       room_type {
         suite
       }
-      excursions {
+      excursion {
         excursion
       }
       dining_package {
