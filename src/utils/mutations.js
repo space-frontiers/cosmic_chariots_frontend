@@ -76,3 +76,12 @@ mutation updateReservationRoomType($reservationId: ID!, $input: RoomTypeInput) {
   }
 }
 `
+export const ADD_RESERVATION = gql`
+mutation AddReservation($userId: ID!, $reservationId: ID!) {
+  addReservation(userId: $userId, reservationId: $reservationId) {
+    _id
+    reservation {
+      _id
+    }
+  }
+}`
