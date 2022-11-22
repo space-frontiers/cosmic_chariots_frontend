@@ -129,3 +129,17 @@ export const QUERY_RESERVATION = gql`
     }
   }
 `
+
+export const QUERY_ROOMTYPES = gql `
+query RoomTypes {
+  roomTypes {
+    _id
+    suite
+    amenities_1
+    amenities_2
+    amenities_3
+    amenities_4
+    cost
+  }
+}
+`
