@@ -3,6 +3,50 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const reservation = [
+  {
+    "reservation": "Basic Accomodations",
+    "travelDate": "February 12, 2023",
+    "amenityOne": "Space Bed",
+    "amenityTwo": "Luxury Bathroom",
+    "amenityThree": "Storage Space",
+    "amenityFour": "Unlimited Moon Pies",
+    "cost": "$5,999",
+    "href": "#",
+    "imageSrc":
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "imageAlt":
+      "Basic Accomodations"
+  },
+  {
+    "reservation": "Premium Suite",
+    "travelDate": " February 12, 2023",
+    "amenityOne": "Your Own View of Space",
+    "amenityTwo": "Mini-Fridge",
+    "amenityThree": "Luxury Bathroom",
+    "amenityFour": "Storage Space",
+    "cost": "$10,999",
+    "href": "#",
+    "imageSrc":
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "imageAlt":
+      "Premium Suite"
+  },
+  {
+    "reservation": "Armstrong Suite",
+    "travelDate": "February 12, 2023",
+    "amenityOne": "Extra Large Window",
+    "amenityTwo": "On-Call Concierge",
+    "amenityThree": "Living Room",
+    "amenityFour": "Dining Room",
+    "cost": "$15,999",
+    "href": "#",
+    "imageSrc":
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG11c2ljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "imageAlt":
+      "Armstrong Suite"
+  }
+]
 export default function Launch(){
   return (
     <div className="flex flex-col min-h-screen overflow-hidden ">
@@ -18,7 +62,7 @@ export default function Launch(){
               <h1 className="text-2xl">Fly in Comfort and Style</h1>
               <div class="card p-2 m-2">
                 <p>Feb. 12, 2023</p>
-                <p>Basic Accomadations</p>
+                <p>Basic Accomodations</p>
                 <ul>Amenities include:
                   <li>Space Bed</li>
                   <li>Luxury Bathroom</li>
