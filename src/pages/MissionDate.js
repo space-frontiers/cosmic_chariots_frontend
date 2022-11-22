@@ -11,7 +11,6 @@ import { CREATE_RESERVATION, UPDATE_RESERVATION_MISSIONDATE } from '../utils/mut
 
 export default function MissionDate(props) {
 
-  const [ mission, setMission] = useState({})
   const { loading, data } = useQuery(QUERY_MISSIONS, {});
   const missionDate = data?.missionDates|| [];
   console.log("data", data)
@@ -19,7 +18,7 @@ export default function MissionDate(props) {
   const location = useLocation();
   const navigate = useNavigate();
   const reservationId = ""
-  // const anotherData = ""
+  const anotherData = ""
 
   console.log("props", location)
 
@@ -39,30 +38,30 @@ export default function MissionDate(props) {
   }
 
   const [updateReservationMissionDate, { error }] = useMutation(UPDATE_RESERVATION_MISSIONDATE, {
-    variables: {reservationId: reservationId, input:{ _id:mission._id, date: mission.date, destination: mission.destination}}
+    // variables: {reservationId: reservationId, input:{ _id:mission._id, date: mission.date, destination: mission.destination}}
   })
 
   
   const handleClick = async (event) => {
     let missionId = event.target.id
     console.log("missionId", missionId)
-    
-    for(let i=0; i<locArray.length; i++){
-      if(locArray[i]._id === missionId){
-        setMission(locArray[i])
-      }
-    }
 
-    console.log("mission", mission)
+    const dateSelected = locArray.find(obj => {
+      return obj._id === missionId;
+    })
+
+    console.log("dateSelected", dateSelected)
 
     try {
       const {data} = await createReservation();
       console.log("data", data)
-      const anotherData = data.createReservation._id
-      console.log("reservationId", anotherData)
+      const anotherData = await data.createReservation._id
+      console.log("anotherData", anotherData)
       console.log("Success!")
 
-      // const { dat } = await updateReservationMissionDate({reservationId: reservationId, input:{ _id:mission._id, date: mission.date, destination: mission.destination}})
+      const { dat } = await updateReservationMissionDate( {variables: {reservationId: data.createReservation._id, input:{ _id: dateSelected._id, date: dateSelected.date, destination: dateSelected.destination}}})
+
+      console.log("Reservation Updated!")
       
       toRoomTypes(anotherData)
 
