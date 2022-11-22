@@ -16,10 +16,7 @@ export default function FinalBooking(props) {
 
   console.log ("card data", cardData)
 
-        try {
-            const 
-        }
-    
+  
         try {
           const { data } = addReservation({});
     

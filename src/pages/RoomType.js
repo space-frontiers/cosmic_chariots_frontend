@@ -23,6 +23,10 @@ export default function RoomType({reservationId}) {
   const roomType = data?.roomTypes || [];
   console.log("roomType", roomType)
 
+  const toFinalBooking = (resId) => {
+    navigate('/finalbooking', {state:{id:1, reservationId: resId}})
+  }
+
   const [updateReservationRoomType, { error }] = useMutation(UPDATE_RESERVATION_ROOM_TYPE, {
     variables: {reservationId: reservationId, input: {_id: myRoom._id, suite: myRoom.suite}},
 });
@@ -45,16 +49,17 @@ export default function RoomType({reservationId}) {
       const { data } = await updateReservationRoomType({
         variables: {reservationId: resId, input: {_id: roomSelected._id, suite: roomSelected.suite}}
       })
+
+      toFinalBooking(resId)
     }
     catch (err) {
     console.error(JSON.stringify(err,null,2));
     }
 
-    // navigate('/mission', {reservationId: reservationId})
+    // navigate('/finalbooking', {reservationId: reservationId})
 
   }
 
-  // console.log("State room", room)
 
   return (
     <>

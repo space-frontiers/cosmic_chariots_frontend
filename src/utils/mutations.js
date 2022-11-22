@@ -49,7 +49,7 @@ export const CREATE_RESERVATION = gql`
       _id
     }
   }
-`
+`;
 export const UPDATE_RESERVATION_MISSIONDATE = gql`
   mutation UpdateReservationMissionDate($reservationId: ID!, $input: MissionDateInput) {
     updateReservationMissionDate(reservationId: $reservationId, input: $input) {
@@ -61,7 +61,7 @@ export const UPDATE_RESERVATION_MISSIONDATE = gql`
       }
     }
   }
-`
+`;
 
 export const UPDATE_RESERVATION_ROOM_TYPE = gql`
   mutation UpdateReservationRoomType($reservationId: ID!, $input: RoomTypeInput) {
@@ -73,8 +73,8 @@ export const UPDATE_RESERVATION_ROOM_TYPE = gql`
       }
     }
   }
-}
-`
+`;
+
 export const ADD_RESERVATION = gql`
 mutation AddReservation($userId: ID!, $reservationId: ID!) {
   addReservation(userId: $userId, reservationId: $reservationId) {
@@ -84,7 +84,7 @@ mutation AddReservation($userId: ID!, $reservationId: ID!) {
     }
   }
 }
-`
+`;
 
 export const DELETE_RESERVATION = gql `
   mutation deleteReservation($reservationId: ID!) {
@@ -92,5 +92,5 @@ export const DELETE_RESERVATION = gql `
         _id
     }
   }
-`
+`;
 
