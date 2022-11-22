@@ -9,10 +9,10 @@ function HeroHome(props) {
 
   const navigate = useNavigate();
   const toMoon = () => {
-    navigate('/missiondates', {state:{id:1, name:'moon'}})
+    navigate('/missiondates', {state:{id:1, name:'Moon'}})
   }
   const toMars = () => {
-    navigate('/missiondates', {state:{id:2, name:'mars'}})
+    navigate('/missiondates', {state:{id:2, name:'Mars'}})
   }
 
   return (

@@ -14,6 +14,16 @@ export default function MissionDate(props) {
 
   console.log("props", location)
 
+  const locArray = []
+
+  for(let i=0;i<missionDate.length;i++){
+    if (missionDate[i].location === location.state.name){
+      locArray.push(missionDate[i])
+    }
+  }
+  console.log("location array", locArray)
+
+
   return (
  
     <div className="bg-white">
@@ -23,17 +33,9 @@ export default function MissionDate(props) {
         <div className="flex justify-center">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
         {/* <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 text-white"> */}
-          {missionDate.map((missionDate) => (
+          {locArray.map((missionDate) => (
+
             <div className="border-4 rounded-md border-blue-100 text-white">
-                {/* <a key={missionDates._id} href={excursion.href} className="group">
-                  <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden bg-blue-200 xl:aspect-w-7 xl:aspect-h-8">
-                    <img
-                      src={excursion.imageSrc}
-                      alt={excursion.imageAlt}
-                      className="h-full w-full object-cover object-center group-hover:opacity-75"
-                    />
-                  </div>
-                </a> */}
                 <div className="bg-blue-100">
                 <h3 className=" text-center underline text-3xl text-black ">
                   {missionDate.destination}
