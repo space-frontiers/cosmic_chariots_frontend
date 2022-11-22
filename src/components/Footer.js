@@ -4,7 +4,7 @@ import ghIMG from "../images/gh32px.png";
 import ghAB from "../images/gh-ab.jpg";
 
 import ghMJ from "../images/gh-mj.jpg";
-import ghHP from "../images/gh-hp.png";
+import ghHP from "../images/gh-hp.jpg";
 
 export default function Footer(){
   return (
