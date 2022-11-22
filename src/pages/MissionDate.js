@@ -19,6 +19,7 @@ export default function MissionDate(props) {
   const location = useLocation();
   const navigate = useNavigate();
   const reservationId = ""
+  // const anotherData = ""
 
   console.log("props", location)
 
@@ -33,8 +34,8 @@ export default function MissionDate(props) {
 
   const [createReservation] = useMutation(CREATE_RESERVATION)
 
-  const toRoomTypes = () => {
-    navigate('/roomtype', {reservationId: reservationId})
+  const toRoomTypes = (anotherData) => {
+    navigate('/roomtype', {state:{id:1, reservationId: anotherData}})
   }
 
   const [updateReservationMissionDate, { error }] = useMutation(UPDATE_RESERVATION_MISSIONDATE, {
@@ -42,8 +43,9 @@ export default function MissionDate(props) {
   })
 
   
-  const  handleClick = async (event) => {
+  const handleClick = async (event) => {
     let missionId = event.target.id
+    console.log("missionId", missionId)
     
     for(let i=0; i<locArray.length; i++){
       if(locArray[i]._id === missionId){
@@ -51,24 +53,25 @@ export default function MissionDate(props) {
       }
     }
 
-    try {
-      const { data } = await createReservation({});
+    console.log("mission", mission)
 
-      reservationId = data._id
-      console.log("reservationId", data)
+    try {
+      const {data} = await createReservation();
+      console.log("data", data)
+      const anotherData = data.createReservation._id
+      console.log("reservationId", anotherData)
       console.log("Success!")
 
-      const { dat } = await UPDATE_RESERVATION_MISSIONDATE({})
-
+      // const { dat } = await updateReservationMissionDate({reservationId: reservationId, input:{ _id:mission._id, date: mission.date, destination: mission.destination}})
       
-      toRoomTypes()
+      toRoomTypes(anotherData)
 
     }
     catch (err) {
     console.error(JSON.stringify(err,null,2));
     }
 
-    navigate('/mission', {reservationId: reservationId})
+    // toRoomTypes()
 
   }
 

@@ -12,6 +12,8 @@ export default function RoomType({reservationId}) {
   const { loading, data } = useQuery(QUERY_ROOMTYPES);
   const roomType = data?.roomTypes || [];
 
+  console.log("reservationId", location)
+
   const [updateReservationRoomType, { error }] = useMutation(UPDATE_RESERVATION_ROOM_TYPE, {
     variables: {reservationId: reservationId, input: {_id: room._id, suite: room.suite}},
 });
