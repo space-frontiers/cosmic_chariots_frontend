@@ -235,8 +235,8 @@ export default function Profile() {
                                         <label htmlFor="country" class="block text-sm font-medium text-gray-700">Country</label>
                                         <input 
                                             type="text" 
-                                            name="Country" 
-                                            id="Country" 
+                                            name="country" 
+                                            id="country" 
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.country}
                                             onChange={handleInputChange}
                                             required/>

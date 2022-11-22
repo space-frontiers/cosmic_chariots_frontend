@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import MoonImage from '../images/billwright-moonscape2aa-650.jpg';
 import MarsImage from '../images/buzzaldrin-mars.jpg';
 import SpaceVideo from '../videos/mars_cut.mp4';
 
-function HeroHome() {
+function HeroHome(props) {
+
+  const navigate = useNavigate();
+  const toMoon = () => {
+    navigate('/missiondates', {state:{id:1, name:'Moon'}})
+  }
+  const toMars = () => {
+    navigate('/missiondates', {state:{id:2, name:'Mars'}})
+  }
 
   return (
     <section className="relative">
@@ -64,24 +73,24 @@ function HeroHome() {
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div class="flex justify-center px-1">
                   <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                    <a href="#!">
+                    <a onClick={()=>{toMoon()}}>
                       <img class="rounded-t-lg" src={MoonImage} alt=""/>
-                    </a>
                     <div class="p-6">
                       <h5 class="text-gray-900 text-xl font-medium mb-2">Lunar Leap</h5>
                       <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">7 Day Experience</button>
                     </div>
+                    </a>
                   </div>
                 </div>
                 <div class="flex justify-center px-1">
                   <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                    <a href="#!">
+                    <a onClick={()=>{toMars()}}>
                       <img class="rounded-t-lg" src={MarsImage} alt="" />
-                    </a>
                     <div class="p-6">
                       <h5 class="text-gray-900 text-xl font-medium mb-2">Mars Explorer</h5>
                       <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">14 Day Experience</button>
                     </div>
+                    </a>
                   </div>
                 </div>
 

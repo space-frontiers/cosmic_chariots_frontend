@@ -84,6 +84,7 @@ function App() {
           {/* <Nav /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
+              {/* <Route path='/mission/:id' element={<MissionDate />} /> */}
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/account" element={<Account />} />
@@ -96,7 +97,7 @@ function App() {
             <Route path="/Activity" element={<Activity />} />
             <Route path="/Mission" element={<Mission />} />
             <Route path="/accomodations" element={<RoomType />} />
-            <Route path="/missionDates" element={<MissionDate />} />
+            <Route path="/missiondates" element={<MissionDate />} />
 
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
