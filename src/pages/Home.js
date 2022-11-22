@@ -7,7 +7,8 @@ import HeroHome from '../components/HeroHome';
 // import Testimonials from '../partials/Testimonials';
 // import Newsletter from '../partials/Newsletter';
 import Footer from '../components/Footer';
-// import Banner from '../partials/Banner';
+import Legal from '../components/Legal';
+import MissionDate from './MissionDate';
 
 function Home() {
   return (
@@ -28,7 +29,7 @@ function Home() {
 
       </main>
 
-      {/* <Banner /> */}
+      <Legal />
 
       {<Footer />}
 
