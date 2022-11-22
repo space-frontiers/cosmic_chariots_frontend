@@ -4,7 +4,7 @@ import "../index.css";
 import { QUERY_ACTIVITY } from '../utils/queries';
 
 
-export default function Activity() {
+function Activity() {
   const { loading, data } = useQuery(QUERY_ACTIVITY);
   const activity = data?.onBoardActivities || [];
   console.log("data ", data)
@@ -43,12 +43,6 @@ export default function Activity() {
                 <p className="mt-1 text-lg font-medium text-gray-900 text-center">
                   {activity.cost}
                 </p>
-                <a
-              href="#"
-              className="mt-3 mb-4 ml-28 inline-flex justify-center items-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-            >
-              Click to Add
-            </a>
                 
               </div>
               
@@ -61,3 +55,4 @@ export default function Activity() {
     </div>
   );
 }
+ export default Activity;
