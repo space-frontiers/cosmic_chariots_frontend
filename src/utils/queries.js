@@ -105,3 +105,27 @@ export const QUERY_DINING = gql`
     }
   }
 `
+
+export const QUERY_RESERVATION = gql`
+  query Reservation($reservationId: ID!) {
+    reservation(reservationId: $reservationId){
+      _id
+      mission {
+        date
+        destination
+      }
+      room_type {
+        suite
+      }
+      excursions {
+        excursion
+      }
+      dining_package {
+        dining_package
+      }
+      on_board_activity {
+        on_board_activity
+      }
+    }
+  }
+`

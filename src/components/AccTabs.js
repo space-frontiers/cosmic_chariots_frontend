@@ -4,7 +4,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME, QUERY_USER } from '../utils/queries';
 
 import Profile from '../components/Profile';
-// import Reservations from '../components/Reservations';
+import Reservations from '../components/Reservations';
 
 import Auth from '../utils/auth';
 
@@ -90,7 +90,7 @@ export default function TabsRender() {
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <p>
-                    Reservations
+                    <Reservations />
                   </p>
                 </div>
               </div>
