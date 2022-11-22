@@ -8,7 +8,7 @@ import { QUERY_DININGPACKAGES } from '../utils/queries';
 
 
   
-  export default function Dining() {
+  function Dining() {
     const { loading, data, err} = useQuery(QUERY_DININGPACKAGES);
     const dining = data?.diningPackages || [];
     console.log("data ", data)
@@ -51,6 +51,7 @@ import { QUERY_DININGPACKAGES } from '../utils/queries';
      
     )
   }
+  export default Dining;
 
 
   

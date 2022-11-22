@@ -4,6 +4,10 @@ import "../index.css"
 import Header from '../components/Header';
 import Legal from '../components/Legal';
 import Footer from '../components/Footer';
+import Excursion from '../components/Excursion';
+import Activity from '../components/Activity';
+import Dining from '../components/Dining';
+
 
 const mission = [
     {
@@ -63,6 +67,11 @@ const mission = [
             </div>
           </div>
         </div>
+        <main className="flex-grow">
+          <Excursion />
+          <Activity />
+          <Dining />
+        </main>
         <Legal />
         <Footer />
       </div>

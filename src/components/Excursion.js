@@ -7,7 +7,7 @@ import { QUERY_EXCURSIONS } from '../utils/queries';
 
 
 
-export default function Excursion() {
+function Excursion() {
   const { loading, data } = useQuery(QUERY_EXCURSIONS);
   const excursion = data?.excursions || [];
   console.log("data ", data)
@@ -43,12 +43,6 @@ export default function Excursion() {
                 <p className="mt-3 text-center text-xl font-lg  text-black">
                   {excursion.cost}
                 </p>
-                <a
-              href="#"
-              className="mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-            >
-              Click to Add
-            </a>
                </div>
             </div>
           ))}
@@ -58,3 +52,5 @@ export default function Excursion() {
     </div>
   );
 }
+
+export default Excursion;

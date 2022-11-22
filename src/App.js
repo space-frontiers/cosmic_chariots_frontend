@@ -25,12 +25,12 @@ import SignUp from './pages/SignUp';
 import Account from './pages/Account';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
-import Excursion from "./pages/Excursion";
+// import Excursion from "./pages/Excursion";
 import Footer from "./components/Footer";
 import User from "./pages/User";
 import Launch from "./pages/Launch";
-import Dining from "./pages/Dining";
-import Activity from "./pages/Activity";
+// import Dining from "./pages/Dining";
+// import Activity from "./pages/Activity";
 import Mission from "./pages/Mission";
 import RoomType from "./pages/RoomType";
 import MissionDate from "./pages/MissionDate";
@@ -93,9 +93,9 @@ function App() {
             <Route path="/Terms" element={<Terms />} />
             <Route path="/user" element={<User />} />
             <Route path="/Launch" element={<Launch />} />
-            <Route path="/Excursion" element={<Excursion />} />
+            {/* <Route path="/Excursion" element={<Excursion />} />
             <Route path="/Dining" element={<Dining />} />
-            <Route path="/Activity" element={<Activity />} />
+            <Route path="/Activity" element={<Activity />} /> */}
             <Route path="/Mission" element={<Mission />} />
             <Route path="/accomodations" element={<RoomType />} />
             <Route path="/missiondates" element={<MissionDate />} />
