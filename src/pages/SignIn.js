@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 import Logo from "../images/logo.png";
 
 const SignIn = (props) => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -29,6 +30,7 @@ const SignIn = (props) => {
       });
 
       Auth.login(data.login.token);
+      navigate(-1)
     } catch (err) {
       console.error(JSON.stringify(err,null,2));
     }
