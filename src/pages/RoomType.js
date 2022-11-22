@@ -142,7 +142,7 @@ export default function RoomType({reservationId}) {
 
       {/* <Banner /> */}
 
-      {/* {<Footer />} */}
+      {<Footer />}
     </div>
 
     </>
