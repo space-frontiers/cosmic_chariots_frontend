@@ -10,17 +10,24 @@ export default function RoomType() {
   console.log("room type", roomType)
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden ">
+    <div className="bg-white">
 
 
       {/*  Page content */}
-      <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-              <h1 className="text-2xl">Fly in Comfort and Style</h1>
+      <main className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        {/* <section className="bg-gradient-to-b from-gray-100 to-white"> */}
+        {/* <section className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"> */}
+  
+          {/* <div className="max-w-6xl mx-auto px-4 sm:px-6"> */}
+          {/* <div> */}
+            {/* <div className="pt-32 pb-12 md:pt-40 md:pb-20"> */}
+            {/* <div> */}
+              <h1 className="text-2xl text-center">Fly in Comfort and Style</h1>
+              <div className="flex justify-center">
+              <div className="rounded-lg shadow-lg bg-white max-w-sm"></div>
+              {/* <h1 text-center text-5xl text-black mb-5>Fly in Comfort and Style</h1> */}
               {roomType.map((roomType) => (
-                <div class="card p-2 m-2">
+                <div class="border-4 rounded-md border-blue-100 text-black">
                   {/* <p>{roomType.travelDate}</p> */}
                   <p>{roomType.suite}</p>
                   {/* <a
@@ -44,9 +51,11 @@ export default function RoomType() {
                     <li>{roomType.amenities_4}</li>
                   </ul>
                   <div>{roomType.cost}</div>
-                  <button class="btn btn-primary mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Click to Choose</button>
+                  <button class="mt-3 mb-4 ml-16 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Click to Choose</button>
                 </div>
               ))}
+              </div>
+              
               {/* <div class="card p-2 m-2">
                 <p>Feb 12, 2023</p>
                 <p>Premium Suite</p>
@@ -72,9 +81,9 @@ export default function RoomType() {
                 <div>$15,999</div>       
                 <button class="btn btn-primary">Click to Choose</button>
               </div> */}
-            </div>
-          </div>
-        </section>
+            {/* </div> */}
+          {/* </div> */}
+        {/* </section> */}
       </main>
 
       {/* <Banner /> */}
