@@ -143,3 +143,13 @@ query RoomTypes {
   }
 }
 `
+// export const QUERY_MISSIONDATE = gql `
+// query MissionDate {
+//   missionDates {
+//     _id
+//     destination
+//     date
+//     description
+//   }
+// }
+// `
