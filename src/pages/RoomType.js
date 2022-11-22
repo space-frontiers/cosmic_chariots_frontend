@@ -5,6 +5,10 @@ import { QUERY_ROOMTYPES } from '../utils/queries';
 import { UPDATE_RESERVATION_ROOM_TYPE } from '../utils/mutations';
 import { useLocation, useNavigate } from "react-router-dom";
 
+import Header from '../components/Header';
+import Legal from '../components/Legal';
+import Footer from '../components/Footer';
+
 export default function RoomType({reservationId}) {
   const [room, setRoom] = useState({})
   const location = useLocation();
@@ -42,6 +46,8 @@ export default function RoomType({reservationId}) {
   console.log("State room", room)
 
   return (
+    <>
+    <Header />
     <div className="bg-white">
 
 
@@ -122,5 +128,8 @@ export default function RoomType({reservationId}) {
 
       {/* {<Footer />} */}
     </div>
+
+    </>
+
   );
 }
