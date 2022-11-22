@@ -11,7 +11,7 @@ export default function Excursion() {
   const { loading, data } = useQuery(QUERY_EXCURSIONS);
   const excursion = data?.excursions || [];
   console.log("data ", data)
-  console.log("dining", excursion)
+  console.log("excursion", excursion)
 
   return (
  

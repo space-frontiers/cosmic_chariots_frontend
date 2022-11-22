@@ -32,7 +32,7 @@ import Launch from "./pages/Launch";
 import Dining from "./pages/Dining";
 import Activity from "./pages/Activity";
 import Mission from "./pages/Mission";
-import Reservation from "./pages/Reservation";
+import RoomType from "./pages/RoomType";
 // import logo from './logo.svg';
 
 const url = process.env.NODE_ENV === 'development'
@@ -94,7 +94,7 @@ function App() {
             <Route path="/Dining" element={<Dining />} />
             <Route path="/Activity" element={<Activity />} />
             <Route path="/Mission" element={<Mission />} />
-            <Route path="/Reservation" element={<Reservation />} />
+            <Route path="/accomodations" element={<RoomType />} />
 
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
