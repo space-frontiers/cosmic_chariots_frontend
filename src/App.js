@@ -33,6 +33,7 @@ import Dining from "./pages/Dining";
 import Activity from "./pages/Activity";
 import Mission from "./pages/Mission";
 import RoomType from "./pages/RoomType";
+import MissionDate from "./pages/MissionDate"
 // import logo from './logo.svg';
 
 const url = process.env.NODE_ENV === 'development'
@@ -95,6 +96,7 @@ function App() {
             <Route path="/Activity" element={<Activity />} />
             <Route path="/Mission" element={<Mission />} />
             <Route path="/accomodations" element={<RoomType />} />
+            <Route path="/missionDates" element={<MissionDate />} />
 
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
