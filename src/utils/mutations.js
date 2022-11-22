@@ -44,5 +44,15 @@ export const UPDATE_USER = gql`
   }
 `
 
-
-
+export const UPDATE_RESERVATION_ROOM_TYPE = gql`
+mutation updateReservationRoomType($reservationId: ID!, $input: RoomTypeInput) {
+  updateReservationRoomType(reservationId: $reservationId, input: $input) {
+    reservation {
+      room_type {
+        _id
+        suite
+      }
+    }
+  }
+}
+`
