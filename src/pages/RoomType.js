@@ -3,10 +3,12 @@ import React,{ useState } from "react";
 import "../index.css";
 import { QUERY_ROOMTYPES } from '../utils/queries';
 import { UPDATE_RESERVATION_ROOM_TYPE } from '../utils/mutations';
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function RoomType({reservationId}) {
   const [room, setRoom] = useState({})
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const { loading, data } = useQuery(QUERY_ROOMTYPES);
   const roomType = data?.roomTypes || [];
 

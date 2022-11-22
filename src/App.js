@@ -98,6 +98,7 @@ function App() {
             <Route path="/Mission" element={<Mission />} />
             <Route path="/accomodations" element={<RoomType />} />
             <Route path="/missiondates" element={<MissionDate />} />
+            <Route path="/roomtype" element={<RoomType />} />
 
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
