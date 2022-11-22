@@ -1,18 +1,18 @@
 import { useQuery } from '@apollo/client';
-import React from "react";
+import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
 import "../index.css"
 import { QUERY_MISSIONS } from '../utils/queries';
 
 
-
-
-
-export default function MissionDate() {
+export default function MissionDate(props) {
   const { loading, data } = useQuery(QUERY_MISSIONS, {});
   const missionDate = data?.missionDates|| [];
   console.log("data", data)
   console.log("mission dates", missionDate)
+  const location = useLocation();
 
+  console.log("props", location)
 
   return (
  

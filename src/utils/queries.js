@@ -34,7 +34,7 @@ query MissionDates {
     date
     description
     destination
-    
+    location
   }
 }
 `
