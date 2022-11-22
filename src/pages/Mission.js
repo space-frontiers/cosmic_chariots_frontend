@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import React from "react";
 import "../index.css"
 import Header from '../components/Header';
+import Legal from '../components/Legal';
 import Footer from '../components/Footer';
 
 const mission = [
@@ -62,6 +63,7 @@ const mission = [
             </div>
           </div>
         </div>
+        <Legal />
         <Footer />
       </div>
     )

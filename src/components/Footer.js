@@ -16,7 +16,7 @@ export default function Footer(){
     //   </div>
 
     // </footer>
-    <footer class="px-4 py-4 h-auto mb-4 w3-full flex flex-wrap justify-center items-center bg-gray-50">
+    <footer class="px-4 py-4 h-auto mb-4 w3-full flex flex-wrap justify-center items-center ">
       <div class="flex flex-wrap flex-col items-center">
         <div class="flex flex-wrap">
           <a href="https://github.com/devilarms83" target="_blank"><img class="h-6 w-6 mx-1 rounded-full bg-blue-200" alt="github logo" src={ghAB} /></a>

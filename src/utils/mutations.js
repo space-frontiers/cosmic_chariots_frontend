@@ -44,5 +44,13 @@ export const UPDATE_USER = gql`
   }
 `
 
+export const CREATE_RESERVATION = gql`
+  mutation createReservation {
+    createReservation {
+      _id
+    }
+  }
+`
+
 
 
