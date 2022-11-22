@@ -3,7 +3,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { QUERY_RESERVATION, QUERY_ROOMTYPES } from "../utils/queries"
 import { ADD_RESERVATION } from "../utils/mutations";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Auth from "../utils/auth";
 
 import Header from "../components/Header"
@@ -11,6 +11,7 @@ import Footer from "../components/Footer"
 import AcctHdrImg from '../images/starship.jpg';
 
 export default function FinalBooking(props) {
+  const navigate = useNavigate();
   const location = useLocation()
   console.log("props", location)
   const resId = location.state.reservationId
@@ -36,10 +37,6 @@ export default function FinalBooking(props) {
     return `Error! ${err}`;
   }
 
-
-
-
-
     const  handleClick = async (event) => {
       
       try{
@@ -49,6 +46,8 @@ export default function FinalBooking(props) {
           })
 
           console.log("Success!")
+          alert("Reservation booked!")
+          navigate('/account')
         } else {
           console.log("Not Logged In!")
         }
@@ -83,7 +82,7 @@ export default function FinalBooking(props) {
               </p>              
             
             </div>
-            <div class="relative flex items-center justify-self-center ">
+            <div class="relative flex items-center justify-center content-center">
               <button class="rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-center font-medium text-white hover:bg-indigo-700" onClick={handleClick}>Book Reservation!</button>
             </div>
           </div>
