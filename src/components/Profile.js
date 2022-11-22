@@ -7,34 +7,57 @@ import Auth from '../utils/auth';
 
 export default function Profile() {
 
-    const [userFormData, setUserFormData] = useState({
+    const [userData, setUserData] = useState({
+        email: Auth.getProfile().data.email,
         first_name: "",
         last_name: "",
-        email: "",
-        password: "",
+        phone_number: "",
         street_address_1: "",
         street_address_2: "",
         city: "",
         state: "",
         zip: "",
         country: "",
+
+    })
+
+    const [userFormData, setUserFormData] = useState({
+        email: Auth.getProfile().data.email,
+        first_name: "",
+        last_name: "",
         phone_number: "",
+        street_address_1: "",
+        street_address_2: "",
+        city: "",
+        state: "",
+        zip: "",
+        country: "",
     })
 
     const email = Auth.getProfile().data.email
     console.log(email)
-
-    // declared the addUser with the useMutation
-    const [updateUser, { error }] = useMutation(UPDATE_USER, {
-        variables: { email: email },
-    });
 
     const { loading, data, err } = useQuery(QUERY_USER, {
         variables: { email: email },
     });
 
     let userdata = data?.user || {};
-    console.log(userdata)
+    console.log("userdata", userdata)
+    const first_name = userdata.first_name
+    const last_name = userdata.last_name
+    const phone_number = userdata.phone_number
+    const street_address_1 = userdata.street_address_1
+    const street_address_2 = userdata.street_address_2
+    const city = userdata.city
+    const state = userdata.state
+    const zip = userdata.zip
+    const country = userdata.country
+
+
+    // declared the updateUser with the useMutation
+    const [updateUser, { error }] = useMutation(UPDATE_USER, {
+        variables: { email: email, first_name: first_name, last_name: last_name, phone_number: phone_number, street_address_1: street_address_1, street_address_2: street_address_2, city: city, state: state, zip: zip, country: country },
+    });
 
     if (loading) {
         return <div>Loading...</div>;
@@ -48,11 +71,12 @@ export default function Profile() {
     const { name, value } = event.target;
     
     setUserFormData({ ...userFormData, [name]: value });
+    console.log("userformdata", userFormData)
     };
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(userFormData);
+        console.log(userData);
     
         // use updateUser function
         try {
@@ -60,14 +84,16 @@ export default function Profile() {
           variables: { ...userFormData },
         });
 
+        console.log("data", data)
         console.log("Success!")
+        window.location.reload()
     
-        Auth.login(data.updateUser.token);
+        Auth.loggedIn(data.updateUser.token);
         } catch (err) {
           console.error(JSON.stringify(err,null,2));
         }
     
-        setUserFormData({
+        setUserData({
             first_name: "",
             last_name: "",
             email: "",
@@ -127,65 +153,95 @@ export default function Profile() {
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label htmlFor="email_address" class="block text-sm font-medium text-gray-700">Email address</label>
+                                        <label htmlFor="email" class="block text-sm font-medium text-gray-700">Email address</label>
                                         <input 
                                             type="text" 
-                                            name="email_address" 
-                                            id="email_address" 
+                                            name="email" 
+                                            id="email" 
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
-                                            defaultValue={userdata.email}
-                                            onChange={handleInputChange}
-                                            required/>
+                                            value={userdata.email}
+                                            readOnly
+                                        />
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
                                         <label htmlFor="phone_number" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                                        <input type="text" name="email_address" id="email_address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
-                                        defaultValue={userdata.phone_number}
-                                        onChange={handleInputChange}
-                                        required/>
+                                        <input 
+                                            type="text" 
+                                            name="phone_number" 
+                                            id="phone_number" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
+                                            defaultValue={userdata.phone_number}
+                                            onChange={handleInputChange}
+                                            required/>
                                     </div>
 
                                     <div class="col-span-6">
-                                        <label htmlFor="street_address" class="block text-sm font-medium text-gray-700">Street address</label>
-                                        <input type="text" name="street_address" id="street_address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.street_address_1}
-                                        onChange={handleInputChange}
-                                        required/>
+                                        <label htmlFor="street_address_1" class="block text-sm font-medium text-gray-700">Street address</label>
+                                        <input 
+                                            type="text" 
+                                            name="street_address_1" 
+                                            id="street_address_1" 
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.street_address_1}
+                                            onChange={handleInputChange}
+                                            required/>
                                     </div>
 
                                     <div class="col-span-6">
-                                        <label htmlFor="street_address" class="block text-sm font-medium text-gray-700">Street address cont.</label>
-                                        <input type="text" name="street_address" id="street_address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.street_address_2}
-                                        onChange={handleInputChange}
+                                        <label htmlFor="street_address_2" class="block text-sm font-medium text-gray-700">Street address cont.</label>
+                                        <input 
+                                            type="text" 
+                                            name="street_address_2" 
+                                            id="street_address_2" 
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.street_address_2}
+                                            onChange={handleInputChange}
                                         />
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                                         <label htmlFor="city" class="block text-sm font-medium text-gray-700">City</label>
-                                        <input type="text" name="city" id="city" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.city}
+                                        <input 
+                                        type="text" 
+                                        name="city" 
+                                        id="city" 
+                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" 
+                                        defaultValue={userdata.city}
                                         onChange={handleInputChange}
                                         required/>
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                         <label htmlFor="state" class="block text-sm font-medium text-gray-700">State / Province</label>
-                                        <input type="text" name="state" id="state" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.state}
-                                        onChange={handleInputChange}
-                                        required/>
+                                        <input 
+                                            type="text" 
+                                            name="state" 
+                                            id="state" 
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.state}
+                                            onChange={handleInputChange}
+                                            required/>
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label htmlFor="postal_code" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
-                                        <input type="text" name="postal_code" id="postal_code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.zip}
-                                        onChange={handleInputChange}
-                                        required/>
+                                        <label 
+                                            htmlFor="zip" 
+                                            class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
+                                        <input 
+                                            type="text" 
+                                            name="zip" 
+                                            id="zip" 
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.zip}
+                                            onChange={handleInputChange}
+                                            required/>
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
                                         <label htmlFor="country" class="block text-sm font-medium text-gray-700">Country</label>
-                                        <input type="text" name="last_name" id="last_name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.country}
-                                        onChange={handleInputChange}
-                                        required/>
+                                        <input 
+                                            type="text" 
+                                            name="Country" 
+                                            id="Country" 
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={userdata.country}
+                                            onChange={handleInputChange}
+                                            required/>
                                     </div>
 
                                 </div>

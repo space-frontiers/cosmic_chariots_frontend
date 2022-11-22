@@ -27,22 +27,20 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($userId: ID!, $phone_number: String, $street_address_1: String, $street_address_2: String, $city: String, $state: String, $zip: String, $country: String){
-    updateUser(userId: $userId, phone_number: $phone_number, street_address_1: $street_address_1, street_address_2: $street_address_2, city: $city, state: $state, zip: $zip, country: $country) {
+  mutation updateUser($email: String!, $first_name: String, $last_name: String, $phone_number: String, $street_address_1: String, $street_address_2: String, $city: String, $state: String, $zip: String, $country: String){
+    updateUser(email: $email, first_name: $first_name, last_name: $last_name, phone_number: $phone_number, street_address_1: $street_address_1, street_address_2: $street_address_2, city: $city, state: $state, zip: $zip, country: $country) {
       token
       user {
-        _id
-        city
-        country
         email
         first_name
         last_name
-        password
         phone_number
-        state
         street_address_1
         street_address_2
+        city
+        state
         zip
+        country
       }
     }
   }
