@@ -5,41 +5,60 @@ import { QUERY_ROOMTYPES } from '../utils/queries';
 import { UPDATE_RESERVATION_ROOM_TYPE } from '../utils/mutations';
 import { useLocation, useNavigate } from "react-router-dom";
 
+import Header from '../components/Header';
+import Legal from '../components/Legal';
+import Footer from '../components/Footer';
+
 export default function RoomType({reservationId}) {
-  const [room, setRoom] = useState({})
+  const [myRoom, setMyRoom] = useState({})
+
   const location = useLocation();
+  // console.log("reservationId", location.state.reservationId)
+  const resId = location.state.reservationId
+  console.log("resId", resId)
+
   const navigate = useNavigate();
+
   const { loading, data } = useQuery(QUERY_ROOMTYPES);
   const roomType = data?.roomTypes || [];
+  console.log("roomType", roomType)
 
   const [updateReservationRoomType, { error }] = useMutation(UPDATE_RESERVATION_ROOM_TYPE, {
-    variables: {reservationId: reservationId, input: {_id: room._id, suite: room.suite}},
+    variables: {reservationId: reservationId, input: {_id: myRoom._id, suite: myRoom.suite}},
 });
 
   const  handleClick = async (event) => {
     let clickedRoom = event.target.id
-    for(let i=0; i<data.roomTypes.length; i++){
-      if(data.roomTypes[i]._id === clickedRoom){
-        setRoom(data.roomTypes[i])
-      }
-    }
+    console.log("clickedRoom", clickedRoom)
+
+    console.log("roomType", roomType)
+
+    const roomSelected = roomType.find(obj => {
+      return obj._id === clickedRoom;
+    })
+
+    console.log("roomSelected", roomSelected)
+
+    console.log("room", myRoom)
 
     try {
       const { data } = await updateReservationRoomType({
-        variables: {reservationId: reservationId, input: {_id: room._id, suite: room.suite}}
+        variables: {reservationId: resId, input: {_id: roomSelected._id, suite: roomSelected.suite}}
       })
     }
     catch (err) {
     console.error(JSON.stringify(err,null,2));
     }
 
-    navigate('/mission', {reservationId: reservationId})
+    // navigate('/mission', {reservationId: reservationId})
 
   }
 
-  console.log("State room", room)
+  // console.log("State room", room)
 
   return (
+    <>
+    <Header />
     <div className="bg-white">
 
 
@@ -120,5 +139,8 @@ export default function RoomType({reservationId}) {
 
       {/* {<Footer />} */}
     </div>
+
+    </>
+
   );
 }
