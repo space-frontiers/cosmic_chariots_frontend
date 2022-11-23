@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MoonImage from '../images/billwright-moonscape2aa-650.jpg';
 import MarsImage from '../images/buzzaldrin-mars.jpg';
 import SpaceVideo from '../videos/mars_cut.mp4';
+import ArrowDown from '../images/arrow-down.png';
 
 function HeroHome(props) {
 
@@ -14,6 +15,9 @@ function HeroHome(props) {
   const toMars = () => {
     navigate('/missiondates', {state:{id:2, name:'Mars'}})
   }
+  const toMission = () => {
+    navigate('/mission')
+  }
 
   return (
     <section className="relative">
@@ -23,9 +27,12 @@ function HeroHome(props) {
 >
   <div
     class="text-center relative z-30 p-5 text-2xl text-white bg-blue-800 bg-opacity-50 rounded-xl" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear"
-  >
+  > <br />
     <p class="italic font-bold">Space Frontiers: Cosmic Chariots</p>
-    <p>Galactic Adventures Company</p>
+    <p>Galactic Adventures Company</p><br />
+    <div class="relative flex items-center justify-center content-center place-content-center" data-aos="zoom-out">
+        <a href="#ready"><img src={ArrowDown} /></a>
+    </div>
   </div>
   <video
     autoPlay
@@ -61,10 +68,10 @@ function HeroHome(props) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Hero content */}
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20" id="ready">
 
           {/* Section header */}
-          <div className="text-center pb-12 md:pb-16">
+          <div className="text-center pb-5 md:pb-7" >
             <h1 className="italic text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Space Frontiers:  {'\n'}<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Cosmic Chariots</span></h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Welcome to Space Frontiers, home of the Cosmic Chariots Starship!</p>
@@ -92,9 +99,19 @@ function HeroHome(props) {
                     </div>
                     </a>
                   </div>
+                  
                 </div>
 
               </div>
+              
+            </div>
+            <div class="pt-2 ">
+              <a onClick={()=>{toMission()}}>
+                    <div class="p-6">
+                      <h5 class="text-gray-900 text-xl font-medium mb-2">Take a look at all the possibilities!</h5>
+                      <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Planet Excursions, On-board Activities, Dining Packages</button>
+                    </div>
+                </a>
             </div>
           </div>
 
